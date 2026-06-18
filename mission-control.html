@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Outlaw Intelligence — Local Mission Control</title>
+  <meta name="description" content="Local Mission Control prototype for Outlaw Intelligence: agents, tasks, memory, approvals, and operating systems." />
+  <link rel="stylesheet" href="css/style.css" />
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "name": "Outlaw Intelligence",
+        "url": "https://outlawintelligenceai.com",
+        "logo": "https://outlawintelligenceai.com/assets/outlaw-intelligence-mark-transparent.png",
+        "email": "audits@outlawintelligence.ai",
+        "description": "AI-powered web agency helping local businesses find and fix website problems that cost customers.",
+        "sameAs": [
+          "https://www.facebook.com/OutlawIntelligence",
+          "https://www.linkedin.com/company/outlawintelligence"
+        ]
+      },
+      {
+        "@type": "LocalBusiness",
+        "name": "Outlaw Intelligence",
+        "image": "https://outlawintelligenceai.com/assets/outlaw-intelligence-mark-transparent.png",
+        "url": "https://outlawintelligenceai.com",
+        "email": "audits@outlawintelligence.ai",
+        "telephone": "+1-801-555-0199",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "TODO: Update with actual street address",
+          "addressLocality": "Salt Lake City",
+          "addressRegion": "UT",
+          "postalCode": "84101",
+          "addressCountry": "US"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 40.7608,
+          "longitude": -111.8910
+        },
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+            "opens": "08:00",
+            "closes": "17:00"
+          }
+        ],
+        "priceRange": "$$$",
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "AI Web Services",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Website Care",
+                "description": "Monthly website maintenance, updates, and performance monitoring.",
+                "price": "1000",
+                "priceCurrency": "USD"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Website + Chatbot",
+                "description": "Website care plus custom AI chatbot for lead capture and FAQ automation.",
+                "price": "1500",
+                "priceCurrency": "USD"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Review Agent",
+                "description": "Automated review management system that routes negative replies privately and guides positive replies to Google.",
+                "price": "2000",
+                "priceCurrency": "USD"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Free Website Audit",
+                "description": "Comprehensive analysis of mobile experience, local SEO, speed, trust signals, and competitor gaps."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How much does an AI website audit cost?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Our free website audit checks mobile experience, local SEO, speed, trust signals, and competitor gaps. No credit card required."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the ROI of an AI chatbot for local businesses?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Local businesses typically see increased lead generation within the first month of deploying a custom AI chatbot, with reduced customer support costs."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How does review automation work?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The Review Agent tier follows up after service. Negative replies route to the owner privately; positive replies are guided toward a Google review request. That protects reputation and turns good work into public proof."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body class="mission-page">
+  <header class="site-header">
+    <nav class="nav" aria-label="Primary navigation">
+      <a class="brand" href="index.html" aria-label="Back to Outlaw Intelligence home">
+        <span class="brand-mark">OI</span>
+        <span>Mission Control</span>
+      </a>
+      <div class="nav-links static-links">
+        <a href="index.html">Landing Page</a>
+        <a href="#agents">Agents</a>
+        <a href="#workflow">Workflow</a>
+        <a href="#approvals">Approvals</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="section mission-hero">
+      <p class="eyebrow"><span class="status-dot"></span> Local prototype · internal only</p>
+      <h1>Mission Control for the AI business machine.</h1>
+      <p class="hero-subtitle">The video’s best idea was not “use more AI.” It was “give the agent a dashboard, memory, schedule, and task board.” This is the first local shell for that operating layer.</p>
+    </section>
+
+    <section class="section dashboard-grid" id="agents">
+      <article class="dashboard-panel wide">
+        <p class="mono-label">AGENT ROSTER</p>
+        <div class="agent-row"><strong>Zeus / Hermes</strong><span>Strategy, orchestration, decisions, Telegram command layer</span><em>Online</em></div>
+        <div class="agent-row"><strong>Leo</strong><span>Website/code builder for local drafts and client build lanes</span><em>On demand</em></div>
+        <div class="agent-row"><strong>Spidey</strong><span>Lead intelligence, scraping, site scoring, local research</span><em>Ready</em></div>
+        <div class="agent-row"><strong>Luna</strong><span>Copywriting, outreach drafts, offer language, tone cleanup</span><em>Ready</em></div>
+        <div class="agent-row"><strong>Kronos</strong><span>Reviewer/auditor/final quality gate; never overlaps Leo</span><em>Locked</em></div>
+      </article>
+
+      <article class="dashboard-panel">
+        <p class="mono-label">TODAY'S TRIAGE</p>
+        <ul class="check-list">
+          <li>Review starter site draft</li>
+          <li>Pick first client niche</li>
+          <li>Build lead scoring checklist</li>
+          <li>Define first recurring retainer</li>
+        </ul>
+      </article>
+
+      <article class="dashboard-panel">
+        <p class="mono-label">NIGHTLY AUTOPILOT IDEAS</p>
+        <ul class="check-list">
+          <li>Generate one micro-tool or page improvement</li>
+          <li>Summarize yesterday’s decisions</li>
+          <li>Pull one useful lesson from saved research</li>
+          <li>Flag blockers and approval needs</li>
+        </ul>
+      </article>
+    </section>
+
+    <section class="section workflow-board" id="workflow">
+      <p class="eyebrow">Kanban operating loop</p>
+      <h2>Dump tasks in triage. Let agents split, build, and report.</h2>
+      <div class="kanban-columns">
+        <div><h3>Triage</h3><p>Raw ideas, links, client requests, broken workflows.</p></div>
+        <div><h3>Ready</h3><p>Scoped tasks with owner, path, output, and approval gate.</p></div>
+        <div><h3>In Progress</h3><p>Leo, Spidey, Luna, or Zeus working with local-only constraints.</p></div>
+        <div><h3>QA</h3><p>Deterministic checks first. Kronos only when judgment is needed.</p></div>
+        <div><h3>Done</h3><p>Logged in Obsidian, summarized in Telegram, reusable workflow saved.</p></div>
+      </div>
+    </section>
+
+    <section class="section dashboard-grid" id="approvals">
+      <article class="dashboard-panel">
+        <p class="mono-label">MEMORY WIKI</p>
+        <p>Every durable lesson gets saved into the Zeus vault: business state, goals, client pipeline, active projects, handoffs, task logs, and skills.</p>
+      </article>
+      <article class="dashboard-panel">
+        <p class="mono-label">RESEARCH LIBRARY</p>
+        <p>Video transcript and upgrade brief saved under <code>Zeus/Research</code>. Future videos can feed daily learning, offers, and playbooks.</p>
+      </article>
+      <article class="dashboard-panel guardrail-panel">
+        <p class="mono-label">APPROVAL GATES</p>
+        <p>No outreach, publishing, deployment, DNS, billing, credentials, deletion, external access, or production/main changes without Dylan approving it first. The robots can wait. They do not have feelings.</p>
+      </article>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span>Outlaw Intelligence Mission Control</span>
+    <span>Local prototype · not deployed</span>
+  </footer>
+</body>
+</html>
