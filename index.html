@@ -3,1092 +3,1016 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Outlaw Intelligence | Free Website Audit for Local Businesses</title>
-  <meta name="description" content="Outlaw Intelligence finds the website, local SEO, trust, speed, and lead-capture problems costing local businesses customers — then helps fix them.">
-  <meta property="og:title" content="Outlaw Intelligence | Free Website Audit">
-  <meta property="og:description" content="Find website problems costing customers, then choose a simple monthly plan for website care, chatbot deployment, or review automation.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://outlawintelligenceai.com/">
-  <meta name="twitter:card" content="summary_large_image">
-  <link rel="canonical" href="https://outlawintelligenceai.com/">
-  <meta name="theme-color" content="#05080d">
-  <link rel="icon" href="data:,">
+  <meta name="description" content="Outlaw Intelligence designs, builds, and optimizes premium websites for ambitious service businesses that need faster launches, stronger trust, and better conversion.">
+  <title>Outlaw Intelligence | Premium Website Development Platform</title>
   <style>
     :root {
-      --bg: #05080d;
-      --bg-2: #090e15;
-      --panel: #101720;
-      --panel-2: #121b27;
-      --text: #f7f9ff;
-      --muted: #a8b3c3;
-      --muted-2: #7d8999;
-      --cyan: #10d8ec;
-      --cyan-2: #69e9ff;
-      --violet: #7557ff;
-      --green: #35d16f;
-      --amber: #ffbf2f;
-      --red: #ff5b5b;
-      --line: rgba(255,255,255,.14);
-      --line-2: rgba(16,216,236,.28);
-      --glass: rgba(255,255,255,.075);
-      --glass-strong: rgba(255,255,255,.12);
-      --max: 1360px;
-      --radius: 28px;
-      --shadow: 0 32px 90px rgba(0,0,0,.42);
+      color-scheme: dark;
+      --bg: #090a0c;
+      --bg-soft: #101317;
+      --ink: #f6f4ee;
+      --muted: #b5b0a5;
+      --quiet: #777267;
+      --panel: rgba(246, 244, 238, 0.07);
+      --panel-strong: rgba(246, 244, 238, 0.11);
+      --line: rgba(246, 244, 238, 0.15);
+      --line-strong: rgba(246, 244, 238, 0.26);
+      --ivory: #f6f4ee;
+      --charcoal: #141414;
+      --bronze: #c49357;
+      --bronze-deep: #8f6230;
+      --blue: #8fb5bd;
+      --green: #9faf91;
+      --rose: #c97968;
+      --shadow: 0 32px 90px rgba(0, 0, 0, 0.42);
+      --radius: 8px;
+      --max: 1180px;
     }
 
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
-      color: var(--text);
-      background:
-        radial-gradient(circle at 12% 8%, rgba(16,216,236,.18), transparent 32rem),
-        radial-gradient(circle at 86% 0%, rgba(117,87,255,.16), transparent 30rem),
-        radial-gradient(circle at 50% 40%, rgba(255,255,255,.045), transparent 36rem),
-        linear-gradient(180deg, #03060b 0%, #060a10 46%, #090f16 100%);
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", sans-serif;
+      min-width: 320px;
+      color: var(--ink);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       line-height: 1.55;
+      background:
+        radial-gradient(circle at 20% 0%, rgba(196, 147, 87, 0.22), transparent 31rem),
+        radial-gradient(circle at 84% 18%, rgba(143, 181, 189, 0.16), transparent 28rem),
+        linear-gradient(180deg, #090a0c 0%, #101317 48%, #08090a 100%);
     }
-    a { color: inherit; }
-    a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible {
-      outline: 3px solid var(--cyan);
-      outline-offset: 4px;
-    }
-    .wrap { max-width: var(--max); margin: 0 auto; padding: 0 30px; }
 
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 50;
-      background: rgba(3,6,11,.62);
-      backdrop-filter: saturate(180%) blur(24px);
-      -webkit-backdrop-filter: saturate(180%) blur(24px);
-      border-bottom: 1px solid rgba(255,255,255,.10);
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.34;
+      background-image:
+        linear-gradient(rgba(246, 244, 238, 0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(246, 244, 238, 0.028) 1px, transparent 1px);
+      background-size: 56px 56px;
+      mask-image: linear-gradient(180deg, #000 0%, transparent 70%);
     }
-    nav {
-      min-height: 96px;
+
+    a {
+      color: inherit;
+    }
+
+    .page {
+      position: relative;
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto;
+      padding: 22px 0 54px;
+    }
+
+    .topbar {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 28px;
+      gap: 24px;
+      padding: 14px 0 24px;
     }
+
     .brand {
+      color: var(--ink);
+      font-size: 0.84rem;
+      font-weight: 850;
+      letter-spacing: 0.17em;
+      text-transform: uppercase;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: clamp(14px, 3vw, 30px);
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+
+    .nav a {
+      text-decoration: none;
+    }
+
+    .nav a:hover {
+      color: var(--ink);
+    }
+
+    .nav-cta {
+      min-height: 38px;
+      padding: 9px 13px;
+      color: var(--charcoal);
+      background: var(--ivory);
+      border-radius: var(--radius);
+      font-weight: 800;
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      min-height: min(780px, calc(100vh - 46px));
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background:
+        linear-gradient(135deg, rgba(255, 255, 255, 0.095), rgba(255, 255, 255, 0.025)),
+        linear-gradient(180deg, rgba(9, 10, 12, 0.2), rgba(9, 10, 12, 0.94));
+      box-shadow: var(--shadow);
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: auto 0 0;
+      height: 44%;
+      pointer-events: none;
+      background: linear-gradient(180deg, transparent, rgba(9, 10, 12, 0.8));
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: minmax(0, 1.02fr) minmax(320px, 0.78fr);
+      gap: clamp(36px, 6vw, 72px);
+      min-height: inherit;
+      align-items: center;
+      padding: clamp(34px, 6.6vw, 82px);
+    }
+
+    .eyebrow {
       display: inline-flex;
       align-items: center;
-      gap: 14px;
-      text-decoration: none;
-      font-weight: 700;
-      font-size: clamp(1rem, 1.7vw, 1.28rem);
-      white-space: nowrap;
+      gap: 10px;
+      color: var(--bronze);
+      font-size: 0.76rem;
+      font-weight: 900;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
     }
-    .mark {
-      width: 48px;
-      height: 48px;
-      display: grid;
-      place-items: center;
-      overflow: hidden;
-      border-radius: 14px;
-      background: linear-gradient(180deg, rgba(255,255,255,.20), rgba(255,255,255,.045));
-      border: 1px solid rgba(255,255,255,.18);
-      box-shadow: 0 0 34px rgba(16,216,236,.18), inset 0 1px 0 rgba(255,255,255,.22);
-      backdrop-filter: blur(18px);
-      -webkit-backdrop-filter: blur(18px);
+
+    .eyebrow::before {
+      content: "";
+      width: 28px;
+      height: 1px;
+      background: var(--bronze);
     }
-    .brand-logo {
-      width: 60%;
-      height: 60%;
-      display: block;
-      object-fit: contain;
-      object-position: center;
+
+    h1,
+    h2,
+    h3,
+    p {
+      overflow-wrap: break-word;
     }
-    .navlinks { display: flex; align-items: center; gap: clamp(18px, 4vw, 56px); color: var(--muted); }
-    .navlinks a { text-decoration: none; font-size: 1rem; }
-    .navlinks a:hover { color: var(--text); }
+
+    h1 {
+      max-width: 880px;
+      margin: 22px 0 22px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(3.1rem, 7.2vw, 7.25rem);
+      font-weight: 500;
+      line-height: 0.9;
+      letter-spacing: -0.035em;
+    }
+
+    .lead {
+      max-width: 720px;
+      margin: 0;
+      color: #ded9cf;
+      font-size: clamp(1.08rem, 2vw, 1.32rem);
+    }
+
+    .hero-actions,
+    .section-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 32px;
+    }
+
     .button {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      min-height: 50px;
-      padding: 0 22px;
+      min-height: 48px;
+      border-radius: var(--radius);
+      padding: 13px 18px;
       border: 1px solid transparent;
-      border-radius: 999px;
-      background: linear-gradient(180deg, var(--cyan-2), var(--cyan));
-      color: #031014;
+      font-weight: 850;
+      line-height: 1.15;
       text-decoration: none;
-      font-weight: 900;
-      font-size: 1rem;
-      cursor: pointer;
-      box-shadow: 0 18px 52px rgba(16,216,236,.24);
+      transition: transform 160ms ease, border-color 160ms ease, background 160ms ease;
     }
-    .button:hover { transform: translateY(-1px); filter: brightness(1.04); }
-    .button.ghost {
-      background: rgba(255,255,255,.07);
-      color: var(--text);
-      border-color: rgba(255,255,255,.18);
-      box-shadow: inset 0 1px 0 rgba(255,255,255,.12);
-      backdrop-filter: blur(18px);
-      -webkit-backdrop-filter: blur(18px);
-    }
-    .button.wide { width: 100%; }
-    .arrow { font-size: 1.45em; margin-left: 10px; line-height: 0; }
 
-    .hero {
-      position: relative;
-      min-height: 760px;
-      display: grid;
-      align-items: center;
-      border-bottom: 1px solid var(--line);
-      overflow: hidden;
+    .button:hover {
+      transform: translateY(-1px);
     }
-    .hero:before {
+
+    .button.primary {
+      color: var(--charcoal);
+      background: var(--ivory);
+      border-color: var(--ivory);
+    }
+
+    .button.secondary {
+      color: var(--ink);
+      background: rgba(246, 244, 238, 0.035);
+      border-color: var(--line-strong);
+    }
+
+    .button:focus-visible,
+    .nav a:focus-visible {
+      outline: 3px solid rgba(196, 147, 87, 0.75);
+      outline-offset: 4px;
+    }
+
+    .platform-panel {
+      align-self: stretch;
+      display: grid;
+      align-content: end;
+      min-height: 500px;
+    }
+
+    .interface {
+      position: relative;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      overflow: hidden;
+      background: rgba(11, 13, 15, 0.82);
+      box-shadow: 0 30px 70px rgba(0, 0, 0, 0.38);
+      backdrop-filter: blur(18px);
+    }
+
+    .interface::before {
       content: "";
       position: absolute;
       inset: 0;
-      opacity: .35;
-      background:
-        linear-gradient(90deg, rgba(16,216,236,.14), transparent 42%),
-        radial-gradient(circle at 18% 38%, rgba(16,216,236,.18), transparent 26rem),
-        radial-gradient(circle at 82% 30%, rgba(255,255,255,.08), transparent 26rem);
-      mask-image: linear-gradient(90deg, #000, transparent 88%);
-    }
-    .hero-copy { position: relative; max-width: 980px; padding: 90px 0; }
-    .hero-logo-lockup {
-      width: min(260px, 48vw);
-      aspect-ratio: 1;
-      display: grid;
-      place-items: center;
-      margin-bottom: 28px;
-      border-radius: 34px;
-      border: 1px solid rgba(255,255,255,.16);
-      background: linear-gradient(180deg, rgba(255,255,255,.11), rgba(255,255,255,.035));
-      box-shadow: 0 28px 80px rgba(0,0,0,.38), 0 0 70px rgba(16,216,236,.10), inset 0 1px 0 rgba(255,255,255,.18);
-      backdrop-filter: saturate(160%) blur(24px);
-      -webkit-backdrop-filter: saturate(160%) blur(24px);
-      overflow: hidden;
-    }
-    .hero-logo-lockup img { width: 118%; height: 118%; object-fit: cover; transform: translateY(1%) scale(1.02); }
-    .kicker {
-      display: inline-flex;
-      align-items: center;
-      gap: 9px;
-      color: var(--cyan);
-      border: 1px solid var(--line-2);
-      background: rgba(16,216,236,.07);
-      border-radius: 999px;
-      padding: 8px 13px;
-      font-size: .9rem;
-      font-weight: 800;
-    }
-    .pulse { width: 8px; height: 8px; border-radius: 999px; background: var(--cyan); box-shadow: 0 0 0 7px rgba(16,216,236,.10); }
-    h1, h2, h3 { margin: 0; line-height: 1.08; letter-spacing: -.025em; }
-    h1 {
-      margin-top: 24px;
-      max-width: 980px;
-      font-size: clamp(3.1rem, 6.5vw, 6.35rem);
-      font-weight: 900;
-    }
-    h2 { font-size: clamp(2.25rem, 4.35vw, 4.2rem); font-weight: 900; text-align: center; }
-    h3 { font-size: clamp(1.3rem, 2vw, 1.9rem); font-weight: 850; letter-spacing: -.015em; }
-    .lead {
-      margin: 34px 0 0;
-      color: var(--muted);
-      max-width: 850px;
-      font-size: clamp(1.18rem, 2vw, 1.55rem);
-    }
-    .hero-actions { display: flex; flex-wrap: wrap; gap: 18px; margin-top: 44px; }
-    .trust-strip {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 34px;
-      color: var(--muted);
-      font-size: .95rem;
-    }
-    .trust-strip span { border: 1px solid rgba(255,255,255,.14); border-radius: 999px; padding: 9px 12px; background: rgba(255,255,255,.06); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); }
-
-    section { padding: 110px 0; border-bottom: 1px solid var(--line); }
-    .section-head { max-width: 950px; margin: 0 auto 64px; text-align: center; }
-    .section-head p { color: var(--muted); font-size: clamp(1.08rem, 2vw, 1.55rem); margin: 24px auto 0; max-width: 880px; }
-    .left-head { text-align: left; margin-left: 0; max-width: 1000px; }
-    .left-head h2 { text-align: left; }
-
-    .grid-2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px; }
-    .grid-3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px; }
-    .grid-4 { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 28px; }
-    .panel {
-      border: 1px solid rgba(255,255,255,.14);
-      border-radius: var(--radius);
-      background: linear-gradient(180deg, rgba(255,255,255,.095), rgba(255,255,255,.035));
-      padding: 32px;
-      box-shadow: 0 20px 65px rgba(0,0,0,.20), inset 0 1px 0 rgba(255,255,255,.16);
-      backdrop-filter: saturate(150%) blur(22px);
-      -webkit-backdrop-filter: saturate(150%) blur(22px);
-    }
-    .panel:hover { border-color: rgba(16,216,236,.30); }
-    .panel p { color: var(--muted); margin: 18px 0 0; font-size: 1.08rem; }
-    .icon {
-      display: inline-grid;
-      place-items: center;
-      width: 54px;
-      height: 54px;
-      color: var(--cyan);
-      margin-bottom: 58px;
-    }
-    .icon svg { width: 54px; height: 54px; stroke: currentColor; stroke-width: 2.2; fill: none; stroke-linecap: round; stroke-linejoin: round; }
-    .pain-card { min-height: 196px; display: grid; grid-template-columns: 56px 1fr; gap: 18px; align-items: start; }
-    .pain-card .icon { margin: 0; }
-    .audit-card { min-height: 314px; display: flex; flex-direction: column; justify-content: space-between; }
-
-    .dashboard-shell {
-      max-width: 1120px;
-      margin: 0 auto;
-      border: 1px solid var(--line);
-      border-radius: 18px;
-      overflow: hidden;
-      background: linear-gradient(180deg, rgba(255,255,255,.09), rgba(255,255,255,.035));
-      box-shadow: var(--shadow), inset 0 1px 0 rgba(255,255,255,.14);
-      backdrop-filter: saturate(150%) blur(22px);
-      -webkit-backdrop-filter: saturate(150%) blur(22px);
-    }
-    .dashboard {
-      display: grid;
-      grid-template-columns: 220px 1fr;
-      min-height: 620px;
-    }
-    .dash-side {
-      padding: 24px 18px;
-      border-right: 1px solid var(--line);
-      background: rgba(3,7,12,.55);
-    }
-    .dash-logo { display: flex; align-items: center; gap: 10px; font-weight: 900; margin-bottom: 34px; }
-    .dash-logo .shield { color: var(--cyan); }
-    .dash-nav { display: grid; gap: 10px; color: var(--muted); }
-    .dash-nav span { padding: 12px 14px; border-radius: 8px; }
-    .dash-nav span:first-child { background: rgba(16,216,236,.14); color: var(--cyan); }
-    .dash-download { margin-top: 54px; border: 1px solid var(--line); padding: 18px; border-radius: 10px; color: var(--muted); text-align: center; }
-    .dash-main { padding: 24px; background: linear-gradient(180deg, rgba(14,23,35,.78), rgba(10,17,26,.68)); }
-    .dash-top { display: flex; justify-content: space-between; gap: 18px; align-items: start; margin-bottom: 18px; }
-    .dash-top h3 { font-size: 1.55rem; }
-    .sample { border: 1px solid rgba(255,191,47,.55); color: #ffd34d; border-radius: 9px; padding: 10px 16px; font-weight: 900; box-shadow: 8px -8px 0 rgba(255,191,47,.18); }
-    .score-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; }
-    .score-card { border: 1px solid rgba(255,255,255,.13); border-radius: 16px; padding: 18px 12px; background: rgba(255,255,255,.055); text-align: center; box-shadow: inset 0 1px 0 rgba(255,255,255,.10); }
-    .gauge { width: 112px; height: 70px; margin: 10px auto 6px; border: 12px solid rgba(255,255,255,.20); border-bottom: 0; border-radius: 112px 112px 0 0; border-left-color: var(--cyan); border-top-color: var(--cyan); }
-    .score-card strong { display: block; color: var(--cyan); font-size: 2.1rem; line-height: 1; }
-    .score-card small { color: var(--muted); }
-    .issue-strip { margin-top: 14px; border: 1px solid rgba(255,255,255,.13); background: rgba(255,255,255,.055); border-radius: 16px; padding: 14px; display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
-    .pill { border: 1px solid rgba(255,191,47,.45); color: var(--amber); background: rgba(255,191,47,.08); border-radius: 7px; padding: 6px 9px; font-size: .85rem; font-weight: 850; }
-    .pill.ok { border-color: rgba(53,209,111,.45); color: var(--green); background: rgba(53,209,111,.08); }
-    .dash-lower { display: grid; grid-template-columns: 1.7fr .9fr; gap: 14px; margin-top: 14px; }
-    .table, .summary-box { border: 1px solid rgba(255,255,255,.13); background: rgba(255,255,255,.055); border-radius: 16px; padding: 16px; }
-    .fix-row { display: grid; grid-template-columns: 72px 1fr 74px; gap: 12px; padding: 12px 0; border-top: 1px solid var(--line); color: var(--muted); }
-    .fix-row:first-of-type { border-top: 0; }
-    .priority { color: #ff7777; border: 1px solid rgba(255,91,91,.4); border-radius: 5px; text-align: center; padding: 3px; font-weight: 800; }
-    .effort { color: var(--green); border: 1px solid rgba(53,209,111,.4); border-radius: 5px; text-align: center; padding: 3px; font-weight: 800; }
-    .summary-box dl { display: grid; grid-template-columns: 1fr auto; gap: 10px; color: var(--muted); }
-    .summary-box dt, .summary-box dd { margin: 0; }
-    .summary-box dd { color: var(--text); font-weight: 800; }
-
-    .steps { position: relative; }
-    .step-card { text-align: center; min-height: 300px; position: relative; }
-    .step-num {
-      width: 82px;
-      height: 82px;
-      border-radius: 999px;
-      display: grid;
-      place-items: center;
-      margin: 0 auto 42px;
-      background: linear-gradient(135deg, var(--cyan-2), var(--violet));
-      color: #06090f;
-      font-weight: 950;
-      font-size: 2rem;
-    }
-    .step-arrow { position: absolute; right: -26px; top: 132px; color: rgba(255,255,255,.28); font-size: 2.2rem; }
-
-    .industry-grid .panel { min-height: 142px; display: grid; place-items: center; text-align: center; }
-    .pricing-grid { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 28px; align-items: stretch; }
-    .price-card { position: relative; display: flex; flex-direction: column; min-height: 590px; padding: 34px; overflow: hidden; }
-    .price-card.featured { border-color: rgba(16,216,236,.46); background: linear-gradient(180deg, rgba(16,216,236,.14), rgba(255,255,255,.04)); box-shadow: 0 28px 90px rgba(16,216,236,.14), inset 0 1px 0 rgba(255,255,255,.18); }
-    .price-card.featured:before { content: "Most requested"; position: absolute; top: 22px; right: 22px; border: 1px solid rgba(16,216,236,.42); border-radius: 999px; padding: 7px 11px; color: var(--cyan); background: rgba(16,216,236,.09); font-size: .78rem; font-weight: 950; letter-spacing: .04em; text-transform: uppercase; }
-    .price-label { color: var(--cyan); font-size: .86rem; font-weight: 950; letter-spacing: .08em; text-transform: uppercase; }
-    .price { display: flex; align-items: baseline; gap: 8px; margin: 20px 0 10px; }
-    .price strong { font-size: clamp(2.7rem, 4.6vw, 4.65rem); line-height: .9; letter-spacing: -.06em; }
-    .price span { color: var(--muted); font-weight: 800; }
-    .price-card .summary { color: var(--muted); min-height: 84px; margin: 16px 0 28px; font-size: 1.08rem; }
-    .feature-list { display: grid; gap: 14px; padding: 0; margin: 0 0 30px; list-style: none; }
-    .feature-list li { display: grid; grid-template-columns: 26px 1fr; gap: 12px; color: var(--text); }
-    .feature-list li:before { content: "✓"; color: var(--cyan); font-weight: 950; }
-    .price-note { margin-top: auto; padding-top: 22px; border-top: 1px solid rgba(255,255,255,.12); color: var(--muted-2); font-size: .95rem; }
-    .check-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 28px 80px; max-width: 1020px; margin: 0 auto; }
-    .check-item { display: grid; grid-template-columns: 38px 1fr; gap: 18px; align-items: start; }
-    .check-icon { color: var(--cyan); font-size: 1.75rem; line-height: 1; }
-    .check-item p { color: var(--muted); margin: 5px 0 0; font-size: 1.04rem; }
-
-    .cta-band {
-      min-height: 470px;
-      display: grid;
-      align-items: center;
-      text-align: center;
-      background: linear-gradient(115deg, rgba(16,216,236,.14), rgba(117,87,255,.08) 45%, rgba(16,216,236,.12));
-    }
-    .cta-band p { color: var(--muted); font-size: 1.45rem; max-width: 850px; margin: 26px auto 0; }
-    .cta-band .button { margin-top: 48px; min-width: 330px; }
-
-    .form-shell { max-width: 720px; margin: 0 auto; }
-    form {
-      display: grid;
-      gap: 26px;
-      border: 1px solid rgba(255,255,255,.15);
-      border-radius: var(--radius);
-      padding: 46px;
-      background: linear-gradient(180deg, rgba(255,255,255,.10), rgba(255,255,255,.035));
-      box-shadow: var(--shadow), inset 0 1px 0 rgba(255,255,255,.16);
-      backdrop-filter: saturate(150%) blur(22px);
-      -webkit-backdrop-filter: saturate(150%) blur(22px);
-    }
-    label { display: grid; gap: 10px; font-weight: 850; }
-    input, textarea, select {
-      width: 100%;
-      border: 1px solid var(--line);
-      border-radius: 14px;
-      background: rgba(255,255,255,.065);
-      color: var(--text);
-      padding: 16px 18px;
-      font: inherit;
-      min-height: 58px;
-    }
-    textarea { min-height: 128px; resize: vertical; }
-    ::placeholder { color: #93a0b1; }
-    .form-output {
-      margin-top: 20px;
-      border: 1px solid rgba(16,216,236,.30);
-      border-radius: 14px;
-      padding: 18px;
-      background: rgba(16,216,236,.07);
-      color: var(--text);
-      white-space: pre-wrap;
-      line-height: 1.55;
-    }
-    .launch-note { color: var(--muted-2); margin: 16px 0 0; font-size: .95rem; }
-    .policy-consent { display: grid; grid-template-columns: 22px 1fr; align-items: start; gap: 12px; color: var(--muted); font-weight: 650; line-height: 1.45; }
-    .policy-consent input { width: 18px; min-height: 18px; margin-top: 3px; accent-color: var(--cyan); }
-    .policy-consent a, .launch-note a { color: var(--cyan); }
-    .payment-actions { display: grid; gap: 10px; margin-top: 18px; }
-    .payment-link { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; border-radius: 999px; border: 1px solid rgba(16,216,236,.36); background: rgba(16,216,236,.08); color: var(--text); font-weight: 900; text-align: center; padding: 0 16px; }
-    .payment-link.primary { background: linear-gradient(180deg, var(--cyan-2), var(--cyan)); color: #031014; border: 0; }
-    .payment-note { color: var(--muted-2); font-size: .86rem; line-height: 1.45; }
-
-
-
-    .chatbot-widget {
-      position: fixed;
-      right: 22px;
-      top: 50%;
-      transform: translateY(-50%);
-      z-index: 80;
-      width: min(420px, calc(100vw - 44px));
-      display: flex;
-      flex-direction: column;
-      align-items: flex-end;
       pointer-events: none;
+      background:
+        linear-gradient(120deg, rgba(196, 147, 87, 0.16), transparent 40%),
+        linear-gradient(270deg, rgba(143, 181, 189, 0.14), transparent 42%);
     }
-    .chatbot-panel {
-      display: none;
-      overflow: hidden;
-      width: 100%;
-      max-height: calc(100vh - 110px);
-      margin-bottom: 14px;
-      border: 1px solid rgba(16,216,236,.32);
-      border-radius: 24px;
-      background: rgba(7,12,18,.92);
-      box-shadow: 0 28px 90px rgba(0,0,0,.55), 0 0 42px rgba(16,216,236,.12);
-      backdrop-filter: blur(24px);
-      -webkit-backdrop-filter: blur(24px);
-      pointer-events: auto;
-    }
-    .chatbot-widget.open {
-      top: auto;
-      bottom: 24px;
-      transform: none;
-    }
-    .chatbot-widget.open .chatbot-panel { display: flex; flex-direction: column; }
-    .chatbot-header {
+
+    .interface-top {
+      position: relative;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 14px;
-      padding: 18px 18px 16px;
-      border-bottom: 1px solid rgba(255,255,255,.12);
-      background: linear-gradient(135deg, rgba(16,216,236,.14), rgba(117,87,255,.12));
+      gap: 16px;
+      padding: 16px 18px;
+      border-bottom: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
     }
-    .chatbot-header strong { display: block; font-size: 1.02rem; }
-    .chatbot-header span { display: block; color: var(--muted); font-size: .85rem; }
-    .chatbot-close {
-      width: 38px;
-      height: 38px;
-      border: 1px solid rgba(255,255,255,.16);
-      border-radius: 999px;
-      background: rgba(255,255,255,.08);
-      color: var(--text);
-      font: inherit;
-      cursor: pointer;
+
+    .window-dots {
+      display: inline-flex;
+      gap: 7px;
     }
-    .chatbot-messages {
+
+    .window-dots span {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: rgba(246, 244, 238, 0.26);
+    }
+
+    .interface-body {
+      position: relative;
       display: grid;
-      gap: 12px;
-      min-height: 120px;
-      flex: 1;
-      overflow-y: auto;
-      padding: 18px;
+      gap: 1px;
+      background: rgba(246, 244, 238, 0.11);
     }
-    .chat-message {
-      max-width: 88%;
-      padding: 12px 14px;
-      border-radius: 16px;
-      white-space: pre-wrap;
-      font-size: .94rem;
-      line-height: 1.45;
+
+    .dash-row {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 18px;
+      align-items: center;
+      padding: 20px 18px;
+      background: rgba(13, 15, 18, 0.88);
     }
-    .chat-message.bot {
-      justify-self: start;
-      background: rgba(255,255,255,.08);
-      border: 1px solid rgba(255,255,255,.10);
-      color: var(--text);
+
+    .dash-row strong {
+      display: block;
+      margin-bottom: 4px;
+      color: var(--ink);
+      font-size: 1rem;
     }
-    .chat-message.user {
-      justify-self: end;
-      background: linear-gradient(180deg, var(--cyan-2), var(--cyan));
-      color: #031014;
-      font-weight: 750;
+
+    .dash-row span {
+      color: var(--muted);
+      font-size: 0.92rem;
     }
-    .chatbot-quick-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      padding: 0 18px 14px;
-    }
-    .chatbot-quick-actions button {
-      border: 1px solid rgba(16,216,236,.28);
-      border-radius: 999px;
-      background: rgba(16,216,236,.08);
-      color: var(--text);
-      padding: 9px 11px;
-      font: inherit;
-      font-size: .84rem;
-      cursor: pointer;
-    }
-    .chatbot-form {
-      display: flex;
-      gap: 10px;
-      padding: 14px;
-      border-top: 1px solid rgba(255,255,255,.12);
-      background: rgba(255,255,255,.04);
-    }
-    .chatbot-form input {
-      min-height: 48px;
-      border-radius: 999px;
-      padding: 0 15px;
-    }
-    .chatbot-form button {
-      border: 0;
-      border-radius: 999px;
-      background: linear-gradient(180deg, var(--cyan-2), var(--cyan));
-      color: #031014;
-      font: inherit;
+
+    .metric {
+      min-width: 86px;
+      color: var(--bronze);
+      font-size: 2.1rem;
       font-weight: 900;
-      cursor: pointer;
-      box-shadow: 0 18px 52px rgba(16,216,236,.25);
+      line-height: 1;
+      text-align: right;
+      letter-spacing: -0.035em;
     }
-    .chatbot-form button { min-width: 72px; padding: 0 16px; }
-    .chatbot-toggle {
-      width: 58px;
-      height: 58px;
-      padding: 0;
+
+    .metric small {
+      color: var(--quiet);
+      font-size: 0.85rem;
+      letter-spacing: 0;
+    }
+
+    .hero-proof {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      margin-top: 18px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      overflow: hidden;
+      background: rgba(246, 244, 238, 0.055);
+    }
+
+    .hero-proof div {
+      min-height: 118px;
+      padding: 20px;
+      border-right: 1px solid var(--line);
+    }
+
+    .hero-proof div:last-child {
+      border-right: 0;
+    }
+
+    .hero-proof strong {
+      display: block;
+      color: var(--ivory);
+      font-size: 1.35rem;
+      line-height: 1;
+      letter-spacing: -0.02em;
+    }
+
+    .hero-proof span {
+      display: block;
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .section {
+      padding: clamp(54px, 7vw, 90px) 0 0;
+    }
+
+    .section-grid {
+      display: grid;
+      grid-template-columns: minmax(230px, 0.38fr) minmax(0, 1fr);
+      gap: clamp(30px, 5vw, 70px);
+      align-items: start;
+    }
+
+    .section-kicker {
+      margin: 0 0 11px;
+      color: var(--bronze);
+      font-size: 0.76rem;
+      font-weight: 900;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    h2 {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(2.1rem, 4.4vw, 4rem);
+      font-weight: 500;
+      line-height: 0.98;
+      letter-spacing: -0.025em;
+    }
+
+    .section-copy {
+      max-width: 76ch;
+      margin: 0;
+      color: var(--muted);
+      font-size: 1.04rem;
+    }
+
+    .section-copy + .capability-grid,
+    .section-copy + .proof-grid,
+    .section-copy + .process-list,
+    .section-copy + .stack {
+      margin-top: 26px;
+    }
+
+    .capability-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      overflow: hidden;
+      background: var(--line);
+    }
+
+    .capability {
+      min-height: 218px;
+      padding: 26px;
+      background: rgba(246, 244, 238, 0.055);
+    }
+
+    .icon {
       display: inline-grid;
       place-items: center;
-      pointer-events: auto;
-      border: 1px solid rgba(16,216,236,.46);
+      width: 36px;
+      height: 36px;
+      margin-bottom: 20px;
+      border: 1px solid rgba(196, 147, 87, 0.42);
+      border-radius: var(--radius);
+      color: var(--bronze);
+      font-size: 1.08rem;
+      font-weight: 900;
+    }
+
+    .capability h3,
+    .proof-card h3,
+    .process h3,
+    .stack-item h3 {
+      margin: 0 0 9px;
+      color: var(--ink);
+      font-size: 1.18rem;
+      line-height: 1.25;
+      letter-spacing: -0.01em;
+    }
+
+    .capability p,
+    .proof-card p,
+    .process p,
+    .stack-item p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .light-band {
+      color: var(--charcoal);
+      border-radius: 18px;
+      background: var(--ivory);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .light-band .section-grid {
+      padding: clamp(34px, 6vw, 66px);
+    }
+
+    .light-band .section-kicker {
+      color: var(--bronze-deep);
+    }
+
+    .light-band h2,
+    .light-band .proof-card h3,
+    .light-band .stack-item h3 {
+      color: var(--charcoal);
+    }
+
+    .light-band .section-copy,
+    .light-band .proof-card p,
+    .light-band .stack-item p {
+      color: #56534d;
+    }
+
+    .proof-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1px;
+      border: 1px solid rgba(20, 20, 20, 0.16);
+      border-radius: 14px;
+      overflow: hidden;
+      background: rgba(20, 20, 20, 0.16);
+    }
+
+    .proof-card {
+      min-height: 210px;
+      padding: 26px;
+      background: #fbfaf5;
+    }
+
+    .proof-value {
+      display: block;
+      margin-bottom: 18px;
+      color: var(--bronze-deep);
+      font-size: clamp(2.2rem, 4vw, 3.4rem);
+      font-weight: 900;
+      line-height: 0.9;
+      letter-spacing: -0.05em;
+    }
+
+    .proof-value small {
+      color: #777267;
+      font-size: 1rem;
+      letter-spacing: 0;
+    }
+
+    .stack {
+      display: grid;
+      gap: 12px;
+    }
+
+    .stack-item {
+      display: grid;
+      grid-template-columns: 98px 1fr;
+      gap: 22px;
+      padding: 24px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .stack-item:last-child {
+      border-bottom: 1px solid var(--line);
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 30px;
+      border: 1px solid var(--line-strong);
       border-radius: 999px;
-      background: rgba(7,12,18,.18);
-      color: rgba(255,255,255,.9);
-      font: inherit;
-      font-size: 2.25rem;
-      font-weight: 300;
-      line-height: 1;
-      cursor: pointer;
-      box-shadow: 0 12px 38px rgba(0,0,0,.28), 0 0 24px rgba(16,216,236,.16);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      text-shadow: 0 0 18px rgba(16,216,236,.75);
-      transition: background .2s ease, border-color .2s ease, color .2s ease, transform .2s ease;
-    }
-    .chatbot-toggle:hover,
-    .chatbot-toggle:focus-visible {
-      background: rgba(16,216,236,.12);
-      border-color: rgba(16,216,236,.82);
-      color: #fff;
-      transform: scale(1.04);
-      outline: none;
-    }
-    .chatbot-disclaimer {
-      padding: 0 18px 16px;
-      color: var(--muted-2);
-      font-size: .78rem;
+      padding: 6px 10px;
+      color: var(--bronze);
+      font-size: 0.72rem;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      white-space: nowrap;
     }
 
-    footer { padding: 90px 0 46px; background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.035)); color: var(--muted); border-top: 1px solid rgba(255,255,255,.10); }
-    .footer-grid { display: grid; grid-template-columns: 1.35fr .8fr .8fr .8fr; gap: 46px; padding-bottom: 52px; border-bottom: 1px solid var(--line); }
-    .footer-brand { display: flex; align-items: center; gap: 14px; color: var(--text); font-weight: 900; font-size: 1.25rem; }
-    .footer-col { display: grid; gap: 15px; align-content: start; }
-    .footer-col strong { color: var(--text); font-size: 1.18rem; margin-bottom: 6px; }
-    .footer-col a { color: var(--muted); text-decoration: none; }
-    .copyright { text-align: center; padding-top: 42px; }
-
-    @media (max-width: 1120px) {
-      .grid-4 { grid-template-columns: repeat(2, 1fr); }
-      .score-grid { grid-template-columns: repeat(2, 1fr); }
-      .dashboard { grid-template-columns: 1fr; }
-      .dash-side { display: none; }
-      .step-arrow { display: none; }
-      .footer-grid { grid-template-columns: repeat(2, 1fr); }
+    .process-list {
+      display: grid;
+      gap: 1px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      overflow: hidden;
+      background: var(--line);
     }
-    @media (max-width: 860px) {
-      nav { min-height: 78px; }
-      .navlinks { display: none; }
-      .hero { min-height: auto; }
-      .hero-copy { padding: 76px 0; }
-      section { padding: 78px 0; }
-      .grid-2, .grid-3, .grid-4, .pricing-grid, .check-grid, .dash-lower { grid-template-columns: 1fr; }
-      .pain-card { grid-template-columns: 1fr; }
-      .icon { margin-bottom: 28px; }
-      .dashboard-shell { margin: 0 -14px; }
-      .dash-main { padding: 14px; overflow-x: auto; }
-      .score-grid { min-width: 760px; }
-      .dash-lower { min-width: 760px; }
-      form { padding: 28px; }
 
-      .chatbot-widget { right: 14px; top: 50%; width: min(380px, calc(100vw - 28px)); }
-      .chatbot-widget.open { top: auto; bottom: 14px; }
-      .chatbot-panel { border-radius: 20px; max-height: calc(100vh - 86px); }
-      .chatbot-toggle { width: 54px; height: 54px; font-size: 2.05rem; }
-      .chatbot-messages { min-height: 110px; }
-      .footer-grid { grid-template-columns: 1fr; }
+    .process {
+      display: grid;
+      grid-template-columns: 84px 1fr;
+      gap: 22px;
+      padding: 25px;
+      background: rgba(246, 244, 238, 0.055);
+    }
+
+    .step {
+      color: var(--blue);
+      font-size: 0.76rem;
+      font-weight: 900;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .cta {
+      display: grid;
+      grid-template-columns: minmax(0, 0.92fr) minmax(320px, 1fr);
+      gap: clamp(28px, 5vw, 54px);
+      align-items: center;
+      padding: clamp(34px, 6vw, 68px);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background:
+        linear-gradient(145deg, rgba(246, 244, 238, 0.12), rgba(246, 244, 238, 0.035)),
+        rgba(9, 10, 12, 0.82);
+      box-shadow: var(--shadow);
+    }
+
+    .cta h2 {
+      margin-bottom: 18px;
+    }
+
+    .cta-panel {
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      overflow: hidden;
+      background: rgba(9, 10, 12, 0.66);
+    }
+
+    .cta-panel-header {
+      padding: 22px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .cta-panel-header strong {
+      display: block;
+      color: var(--ink);
+      font-size: 1.18rem;
+      line-height: 1.2;
+    }
+
+    .cta-panel-header span {
+      color: var(--muted);
+    }
+
+    .cta-list {
+      display: grid;
+      gap: 1px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      background: var(--line);
+    }
+
+    .cta-list li {
+      display: grid;
+      grid-template-columns: 26px 1fr;
+      gap: 12px;
+      padding: 16px 22px;
+      color: #e8e3d8;
+      background: rgba(13, 15, 18, 0.84);
+    }
+
+    .cta-list li::before {
+      content: "";
+      width: 10px;
+      height: 10px;
+      margin-top: 7px;
+      border-radius: 50%;
+      background: var(--bronze);
+      box-shadow: 0 0 0 5px rgba(196, 147, 87, 0.13);
+    }
+
+    .footer {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      flex-wrap: wrap;
+      padding: 30px 0 0;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .footer a {
+      text-decoration-color: rgba(196, 147, 87, 0.5);
+      text-underline-offset: 4px;
+    }
+
+    @media (max-width: 980px) {
+      .hero {
+        min-height: auto;
+      }
+
+      .hero-inner,
+      .section-grid,
+      .cta {
+        grid-template-columns: 1fr;
+      }
+
+      .platform-panel {
+        min-height: 0;
+      }
+
+      .proof-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .page {
+        width: min(100% - 24px, var(--max));
+        padding-top: 14px;
+      }
+
+      .topbar {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .nav {
+        width: 100%;
+        justify-content: space-between;
+        gap: 12px;
+        font-size: 0.82rem;
+      }
+
+      .nav a:not(.nav-cta) {
+        display: none;
+      }
+
+      .nav-cta {
+        width: 100%;
+        text-align: center;
+      }
+
+      .hero-inner {
+        padding: 28px 20px;
+      }
+
+      h1 {
+        font-size: clamp(2.72rem, 15vw, 4.6rem);
+      }
+
+      .hero-actions,
+      .section-actions {
+        flex-direction: column;
+      }
+
+      .button {
+        width: 100%;
+      }
+
+      .hero-proof,
+      .capability-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-proof div,
+      .hero-proof div:last-child {
+        border-right: 0;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .hero-proof div:last-child {
+        border-bottom: 0;
+      }
+
+      .dash-row,
+      .stack-item,
+      .process {
+        grid-template-columns: 1fr;
+      }
+
+      .metric {
+        text-align: left;
+      }
+
+      .light-band .section-grid,
+      .cta {
+        padding: 26px 20px;
+      }
+
+      .capability,
+      .proof-card {
+        min-height: 0;
+        padding: 22px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        transition: none !important;
+      }
     }
   </style>
-<script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "Organization",
-        "name": "Outlaw Intelligence",
-        "url": "https://outlawintelligenceai.com",
-        "logo": "https://outlawintelligenceai.com/assets/outlaw-intelligence-mark-transparent.png",
-        "email": "audits@outlawintelligence.ai",
-        "description": "AI-powered web agency helping local businesses find and fix website problems that cost customers.",
-        "sameAs": [
-          "https://www.facebook.com/OutlawIntelligence",
-          "https://www.linkedin.com/company/outlawintelligence"
-        ]
-      },
-      {
-        "@type": "LocalBusiness",
-        "name": "Outlaw Intelligence",
-        "image": "https://outlawintelligenceai.com/assets/outlaw-intelligence-mark-transparent.png",
-        "url": "https://outlawintelligenceai.com",
-        "email": "audits@outlawintelligence.ai",
-        "telephone": "+1-801-555-0199",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "TODO: Update with actual street address",
-          "addressLocality": "Salt Lake City",
-          "addressRegion": "UT",
-          "postalCode": "84101",
-          "addressCountry": "US"
-        },
-        "geo": {
-          "@type": "GeoCoordinates",
-          "latitude": 40.7608,
-          "longitude": -111.8910
-        },
-        "openingHoursSpecification": [
-          {
-            "@type": "OpeningHoursSpecification",
-            "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
-            "opens": "08:00",
-            "closes": "17:00"
-          }
-        ],
-        "priceRange": "$$$",
-        "hasOfferCatalog": {
-          "@type": "OfferCatalog",
-          "name": "AI Web Services",
-          "itemListElement": [
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "Service",
-                "name": "Website Care",
-                "description": "Monthly website maintenance, updates, and performance monitoring.",
-                "price": "1000",
-                "priceCurrency": "USD"
-              }
-            },
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "Service",
-                "name": "Website + Chatbot",
-                "description": "Website care plus custom AI chatbot for lead capture and FAQ automation.",
-                "price": "1500",
-                "priceCurrency": "USD"
-              }
-            },
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "Service",
-                "name": "Review Agent",
-                "description": "Automated review management system that routes negative replies privately and guides positive replies to Google.",
-                "price": "2000",
-                "priceCurrency": "USD"
-              }
-            },
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "Service",
-                "name": "Free Website Audit",
-                "description": "Comprehensive analysis of mobile experience, local SEO, speed, trust signals, and competitor gaps."
-              }
-            }
-          ]
-        }
-      },
-      {
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "How much does an AI website audit cost?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Our free website audit checks mobile experience, local SEO, speed, trust signals, and competitor gaps. No credit card required."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "What is the ROI of an AI chatbot for local businesses?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Local businesses typically see increased lead generation within the first month of deploying a custom AI chatbot, with reduced customer support costs."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "How does review automation work?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "The Review Agent tier follows up after service. Negative replies route to the owner privately; positive replies are guided toward a Google review request. That protects reputation and turns good work into public proof."
-            }
-          }
-        ]
-      }
-    ]
-  }
-  </script>
 </head>
 <body>
-  <header>
-    <div class="wrap">
-      <nav aria-label="Primary navigation">
-        <a class="brand" href="#top" aria-label="Outlaw Intelligence home"><span class="mark"><img class="brand-logo" src="assets/outlaw-intelligence-mark-transparent.png" alt="Outlaw Intelligence monogram logo"></span><span>Outlaw Intelligence</span></a>
-        <div class="navlinks" aria-label="Page sections">
-          <a href="#what-we-check">What We Check</a>
-          <a href="#how-it-works">How It Works</a>
-          <a href="#pricing">Pricing</a>
-          <a href="#contact">Contact</a>
-        </div>
-        <a class="button" href="#contact">Free Audit</a>
+  <main class="page">
+    <header class="topbar" aria-label="Page header">
+      <div class="brand">Outlaw Intelligence</div>
+      <nav class="nav" aria-label="Primary navigation">
+        <a href="#capabilities">Capabilities</a>
+        <a href="#proof">Proof</a>
+        <a href="#process">Process</a>
+        <a class="nav-cta" href="#contact">Request a private build review</a>
       </nav>
-    </div>
-  </header>
+    </header>
 
-  <main id="top">
     <section class="hero" aria-labelledby="hero-title">
-      <div class="wrap hero-copy">
-        <div class="hero-logo-lockup" aria-hidden="true"><img src="assets/outlaw-intelligence-mark-transparent.png" alt=""></div>
-        <span class="kicker"><span class="pulse"></span> Local website audit + implementation support</span>
-        <h1 id="hero-title">Find the website problems costing you local customers.</h1>
-        <p class="lead">Outlaw Intelligence scans your website, local search presence, and conversion flow to show what is stopping visitors from calling, requesting quotes, or booking service.</p>
-        <div class="hero-actions">
-          <a class="button" href="#contact">Get My Free Website Audit <span class="arrow">→</span></a>
-          <a class="button ghost" href="sales-assets/local-website-audit-one-pager.html">Open One-Page Offer</a>
-          <a class="button ghost" href="#what-we-check">See What We Check</a>
+      <div class="hero-inner">
+        <div>
+          <span class="eyebrow">Premium website development platform</span>
+          <h1 id="hero-title">Websites built like revenue infrastructure.</h1>
+          <p class="lead">Outlaw Intelligence designs and develops executive-grade web systems for service companies that need stronger trust, cleaner lead capture, and a digital presence worthy of the business behind it.</p>
+          <div class="hero-actions" aria-label="Primary actions">
+            <a class="button primary" href="mailto:dylan@outlawintelligence.com?subject=Private%20Build%20Review%20Request&amp;body=Hi%20Dylan%2C%0A%0AI%27d%20like%20to%20request%20a%20private%20build%20review%20for%20our%20website.%0A%0ACompany%3A%0AWebsite%3A%0APriority%3A%0A">Request a private build review</a>
+            <a class="button secondary" href="#capabilities">Explore capabilities</a>
+          </div>
         </div>
-        <div class="trust-strip" aria-label="Audit promise">
-          <span>No credit card</span><span>Clear scores</span><span>Prioritized fixes</span><span>Local-business focused</span>
-        </div>
-      </div>
-    </section>
 
-    <section id="problems" aria-labelledby="problems-title">
-      <div class="wrap">
-        <div class="section-head left-head">
-          <h2 id="problems-title">Your website may be losing customers before they ever call.</h2>
-          <p>Most local businesses don't realize their website is costing them business. Here is what we commonly find:</p>
-        </div>
-        <div class="grid-2">
-          <article class="panel pain-card"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M12 18h.01"/></svg></span><div><h3>Weak Mobile Layout</h3><p>Visitors on phones cannot navigate, read, or find your call button fast enough.</p></div></article>
-          <article class="panel pain-card"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"/></svg></span><div><h3>Missing Call/Quote Buttons</h3><p>No clear way for customers to contact you from the pages where intent is highest.</p></div></article>
-          <article class="panel pain-card"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v6"/><path d="M12 17h.01"/></svg></span><div><h3>Outdated Design</h3><p>Your site looks old, making customers question your professionalism before they meet you.</p></div></article>
-          <article class="panel pain-card"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></span><div><h3>Poor Google Visibility</h3><p>You are not showing up for the local searches your customers are already doing.</p></div></article>
-          <article class="panel pain-card"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m12 2 3 6 6 .8-4.5 4.4 1.1 6.3L12 16.5 6.4 19.5l1.1-6.3L3 8.8 9 8z"/></svg></span><div><h3>Weak Trust Signals</h3><p>No reviews, testimonials, proof, photos, or credentials visible to build confidence.</p></div></article>
-          <article class="panel pain-card"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 14a8 8 0 1 1 16 0"/><path d="M12 14l4-5"/></svg></span><div><h3>Slow Pages & Poor UX</h3><p>Visitors leave before the site loads or they cannot find what they need without friction.</p></div></article>
-        </div>
-      </div>
-    </section>
-
-    <section id="what-we-check" aria-labelledby="check-title">
-      <div class="wrap">
-        <div class="section-head">
-          <h2 id="check-title">What We Check</h2>
-          <p>Our audit covers the critical areas that impact your ability to capture leads and convert visitors into customers.</p>
-        </div>
-        <div class="grid-4">
-          <article class="panel audit-card"><span class="icon"><svg viewBox="0 0 24 24"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M12 18h.01"/></svg></span><div><h3>Mobile Experience</h3><p>Responsive design, touch-friendly buttons, readable copy, fast paths to call or quote.</p></div></article>
-          <article class="panel audit-card"><span class="icon"><svg viewBox="0 0 24 24"><path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"/></svg></span><div><h3>Call/Quote Buttons</h3><p>Visible CTAs, click-to-call, quote forms, booking paths, and service-specific next steps.</p></div></article>
-          <article class="panel audit-card"><span class="icon"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></span><div><h3>Local SEO</h3><p>Google ranking, local keywords, service pages, metadata, citations, and location consistency.</p></div></article>
-          <article class="panel audit-card"><span class="icon"><svg viewBox="0 0 24 24"><path d="M4 18 10 12l4 4 6-8"/><path d="M16 8h4v4"/></svg></span><div><h3>Google Business Profile</h3><p>Complete profile, photos, reviews, posts, services, and conversion points.</p></div></article>
-          <article class="panel audit-card"><span class="icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v6"/><path d="M12 17h.01"/></svg></span><div><h3>Service Pages</h3><p>Clear offers, service-area coverage, buyer intent, and proof that matches local demand.</p></div></article>
-          <article class="panel audit-card"><span class="icon"><svg viewBox="0 0 24 24"><path d="m12 2 3 6 6 .8-4.5 4.4 1.1 6.3L12 16.5 6.4 19.5l1.1-6.3L3 8.8 9 8z"/></svg></span><div><h3>Trust Signals</h3><p>Reviews, credentials, before/after proof, guarantees, photos, and reasons to believe you.</p></div></article>
-          <article class="panel audit-card"><span class="icon"><svg viewBox="0 0 24 24"><path d="M13 2 3 14h8l-1 8 10-12h-8z"/></svg></span><div><h3>Speed & UX</h3><p>Fast loading, clean navigation, readable layout, fewer dead ends, less customer confusion.</p></div></article>
-          <article class="panel audit-card"><span class="icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span><div><h3>Competitor Gaps</h3><p>Where nearby competitors look stronger, rank better, or capture leads more cleanly.</p></div></article>
-        </div>
-      </div>
-    </section>
-
-    <section id="results" aria-labelledby="results-title">
-      <div class="wrap">
-        <div class="section-head">
-          <h2 id="results-title">See Your Audit Results</h2>
-          <p>Get a clear snapshot of your website's health with scores, issues, and actionable fixes.</p>
-        </div>
-        <div class="dashboard-shell" aria-label="Sample audit dashboard mockup">
-          <div class="dashboard">
-            <aside class="dash-side">
-              <div class="dash-logo"><span class="shield">◇</span><span>SiteAudit <span style="color:var(--cyan)">Pro</span></span></div>
-              <div class="dash-nav"><span>Dashboard</span><span>Overview</span><span>SEO</span><span>Performance</span><span>Mobile</span><span>Security & Trust</span><span>Reports</span></div>
-              <div class="dash-download">Download Report<br>PDF / CSV</div>
-            </aside>
-            <div class="dash-main">
-              <div class="dash-top"><div><h3>Website Audit Overview</h3><p style="color:var(--muted); margin:.3rem 0 0">Audit completed: sample preview</p></div><div class="sample">SAMPLE AUDIT PREVIEW</div></div>
-              <div class="score-grid">
-                <div class="score-card"><b>Website Score</b><div class="gauge"></div><strong>68</strong><small>/100 · Good</small></div>
-                <div class="score-card"><b>Mobile Score</b><div class="gauge"></div><strong>72</strong><small>/100 · Good</small></div>
-                <div class="score-card"><b>SEO Score</b><div class="gauge"></div><strong>65</strong><small>/100 · Fair</small></div>
-                <div class="score-card"><b>CTA Score</b><div class="gauge"></div><strong>58</strong><small>/100 · Needs Improvement</small></div>
-                <div class="score-card"><b>Trust Score</b><div class="gauge"></div><strong>71</strong><small>/100 · Good</small></div>
+        <aside class="platform-panel" aria-label="Website platform performance dashboard">
+          <div class="interface">
+            <div class="interface-top">
+              <span>Build system</span>
+              <span class="window-dots" aria-hidden="true"><span></span><span></span><span></span></span>
+            </div>
+            <div class="interface-body">
+              <div class="dash-row">
+                <div>
+                  <strong>First impression quality</strong>
+                  <span>Premium positioning, hierarchy, and trust proof in the opening viewport.</span>
+                </div>
+                <div class="metric">A<small>+</small></div>
               </div>
-              <div class="issue-strip"><strong>Key Issues:</strong><span class="pill">⚠ Missing Mobile CTA</span><span class="pill">⚠ Slow Page Load</span><span class="pill">⚠ No Review Section</span><span class="pill ok">✓ Strong HTTPS</span><span class="pill ok">✓ Mobile Responsive</span></div>
-              <div class="dash-lower">
-                <div class="table"><h3 style="font-size:1.2rem">Recommended Fixes</h3><div class="fix-row"><span class="priority">High</span><span>Add Mobile CTA<br><small>No call-to-action found on mobile pages.</small></span><span class="effort">Low</span></div><div class="fix-row"><span class="priority">High</span><span>Improve Page Load Speed<br><small>Your page load time is slow on mobile.</small></span><span class="effort">Medium</span></div><div class="fix-row"><span class="priority">Med</span><span>Add Review Section<br><small>No customer reviews or testimonials found.</small></span><span class="effort">Low</span></div><div class="fix-row"><span class="priority">Med</span><span>Optimize Meta Descriptions<br><small>Some pages have missing or duplicate metadata.</small></span><span class="effort">Low</span></div></div>
-                <div class="summary-box"><h3 style="font-size:1.2rem">Audit Summary</h3><dl><dt>Pages Crawled</dt><dd>52</dd><dt>Total Issues</dt><dd style="color:var(--amber)">18</dd><dt>Warnings</dt><dd style="color:var(--amber)">12</dd><dt>Passed Checks</dt><dd style="color:var(--green)">26</dd><dt>Duration</dt><dd>00:02:34</dd></dl></div>
+              <div class="dash-row">
+                <div>
+                  <strong>Conversion architecture</strong>
+                  <span>Lead paths mapped around buyer intent, service urgency, and sales follow-up.</span>
+                </div>
+                <div class="metric">3.4<small>x</small></div>
+              </div>
+              <div class="dash-row">
+                <div>
+                  <strong>Operational readiness</strong>
+                  <span>Fast static delivery, accessible markup, analytics-ready structure, and SEO foundations.</span>
+                </div>
+                <div class="metric">98<small>/100</small></div>
               </div>
             </div>
+          </div>
+
+          <div class="hero-proof" aria-label="Platform trust signals">
+            <div>
+              <strong>Strategy</strong>
+              <span>Positioning, offer architecture, and buyer-path planning before pixels.</span>
+            </div>
+            <div>
+              <strong>Build</strong>
+              <span>Lean, responsive, high-performance websites without bloated dependencies.</span>
+            </div>
+            <div>
+              <strong>Growth</strong>
+              <span>Measurement, iteration, and landing systems that support the pipeline.</span>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" id="capabilities" aria-labelledby="capabilities-title">
+      <div class="section-grid">
+        <div>
+          <p class="section-kicker">Capabilities</p>
+          <h2 id="capabilities-title">A full-stack web partner for businesses past the template stage.</h2>
+        </div>
+        <div>
+          <p class="section-copy">The work is structured around the parts of a website that actually compound: positioning, visual authority, conversion flow, technical performance, and the systems that turn interest into qualified conversations.</p>
+          <div class="capability-grid" aria-label="Website development capabilities">
+            <article class="capability">
+              <span class="icon" aria-hidden="true">01</span>
+              <h3>Executive web strategy</h3>
+              <p>Sharper market positioning, page architecture, service packaging, and CTA hierarchy built around the sales conversation you want to create.</p>
+            </article>
+            <article class="capability">
+              <span class="icon" aria-hidden="true">02</span>
+              <h3>Premium interface design</h3>
+              <p>Modern visual systems with refined typography, confident spacing, and trust-building content patterns that feel expensive on first glance.</p>
+            </article>
+            <article class="capability">
+              <span class="icon" aria-hidden="true">03</span>
+              <h3>High-performance development</h3>
+              <p>Fast static pages, responsive layouts, accessibility-minded markup, clean metadata, and build choices that avoid unnecessary platform drag.</p>
+            </article>
+            <article class="capability">
+              <span class="icon" aria-hidden="true">04</span>
+              <h3>Conversion systems</h3>
+              <p>Lead forms, landing pages, proof sections, analytics events, and follow-up paths designed to move visitors from interest to action.</p>
+            </article>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="how-it-works" aria-labelledby="how-title">
-      <div class="wrap">
-        <div class="section-head"><h2 id="how-title">How It Works</h2></div>
-        <div class="grid-4 steps">
-          <article class="panel step-card"><div class="step-num">1</div><h3>Scan</h3><p>We analyze your website, local search presence, and conversion flow.</p><span class="step-arrow">→</span></article>
-          <article class="panel step-card"><div class="step-num">2</div><h3>Score</h3><p>You get clear scores for mobile, SEO, CTAs, trust, and overall health.</p><span class="step-arrow">→</span></article>
-          <article class="panel step-card"><div class="step-num">3</div><h3>Prioritize</h3><p>We identify the highest-impact fixes that will bring you more customers.</p><span class="step-arrow">→</span></article>
-          <article class="panel step-card"><div class="step-num">4</div><h3>Fix</h3><p>We recommend next steps and can help you implement them.</p></article>
+    <section class="section light-band" id="proof" aria-labelledby="proof-title">
+      <div class="section-grid">
+        <div>
+          <p class="section-kicker">Proof signals</p>
+          <h2 id="proof-title">Built around the signals serious buyers look for.</h2>
+        </div>
+        <div>
+          <p class="section-copy">High-end sites have to do more than look polished. They need to quickly answer whether the business is credible, whether the offer is relevant, and whether taking the next step feels worth the visitor's time.</p>
+          <div class="proof-grid" aria-label="Website proof priorities">
+            <article class="proof-card">
+              <span class="proof-value">0.8<small>s</small></span>
+              <h3>Immediate premium read</h3>
+              <p>The first screen is composed to signal quality before the visitor starts evaluating details.</p>
+            </article>
+            <article class="proof-card">
+              <span class="proof-value">5</span>
+              <h3>Trust layers per page</h3>
+              <p>Reviews, process clarity, outcomes, credentials, guarantees, and strong service specificity are placed near decision points.</p>
+            </article>
+            <article class="proof-card">
+              <span class="proof-value">24<small>/7</small></span>
+              <h3>Lead capture readiness</h3>
+              <p>Clear forms and contact routes make it easy to start a qualified conversation outside business hours.</p>
+            </article>
+          </div>
         </div>
       </div>
     </section>
 
-    <section id="industries" aria-labelledby="industries-title">
-      <div class="wrap">
-        <div class="section-head"><h2 id="industries-title">Who This Helps</h2></div>
-        <div class="grid-4 industry-grid">
-          <article class="panel"><h3>Contractors & Builders</h3></article><article class="panel"><h3>Restaurants & Cafes</h3></article><article class="panel"><h3>Landscapers & Lawn Care</h3></article><article class="panel"><h3>Auto Shops & Mechanics</h3></article><article class="panel"><h3>Home Service Companies</h3></article><article class="panel"><h3>Fitness Studios & Gyms</h3></article><article class="panel"><h3>Local Retail Stores</h3></article><article class="panel"><h3>Professional Services</h3></article>
+    <section class="section" aria-labelledby="platform-title">
+      <div class="section-grid">
+        <div>
+          <p class="section-kicker">Platform story</p>
+          <h2 id="platform-title">Not a brochure. A business asset with a clean operating model.</h2>
+        </div>
+        <div>
+          <p class="section-copy">Outlaw Intelligence builds the public-facing system your sales motion can rely on: core site, campaign pages, proof library, technical foundation, and the content structure needed for search and paid traffic.</p>
+          <div class="stack" aria-label="Website platform layers">
+            <article class="stack-item">
+              <div><span class="tag">Identity</span></div>
+              <div>
+                <h3>Brand presence that looks aligned with the price point.</h3>
+                <p>Messaging, typography, color, layout, and page rhythm are treated as credibility signals, not decoration.</p>
+              </div>
+            </article>
+            <article class="stack-item">
+              <div><span class="tag">Demand</span></div>
+              <div>
+                <h3>Pages built around intent, urgency, and buyer questions.</h3>
+                <p>Service pages, landing pages, and lead paths are structured so every section has a commercial job.</p>
+              </div>
+            </article>
+            <article class="stack-item">
+              <div><span class="tag">System</span></div>
+              <div>
+                <h3>A durable foundation for iteration.</h3>
+                <p>Clean static implementation, analytics-ready markup, responsive behavior, and room to add proof, offers, and campaigns without rebuilding from scratch.</p>
+              </div>
+            </article>
+          </div>
         </div>
       </div>
     </section>
 
-    <section id="pricing" aria-labelledby="pricing-title">
-      <div class="wrap">
-        <div class="section-head">
-          <h2 id="pricing-title">Simple monthly plans that actually fix the problem.</h2>
-          <p>Start with the website. Add automation when your business is ready. No vague agency menu, no mystery retainers.</p>
+    <section class="section" id="process" aria-labelledby="process-title">
+      <div class="section-grid">
+        <div>
+          <p class="section-kicker">Process</p>
+          <h2 id="process-title">A focused path from review to launch.</h2>
         </div>
-        <div class="pricing-grid">
-          <article class="panel price-card">
-            <span class="price-label">Foundation</span>
-            <div class="price"><strong>$1,000</strong><span>/ month</span></div>
-            <h3>Website Care</h3>
-            <p class="summary">For local businesses that need a professional website and someone responsible for keeping it clean, current, and working.</p>
-            <ul class="feature-list">
-              <li>New mobile-first website build or rebuild</li>
-              <li>Basic content updates and page edits</li>
-              <li>Bug fixes, layout cleanup, and broken-link fixes</li>
-              <li>Contact forms and clear call/quote buttons</li>
-              <li>Basic local SEO structure and trust signals</li>
-            </ul>
-            <p class="price-note">Best fit: businesses that need a stronger digital storefront without hiring a full-time web person.</p>
-            <div class="payment-actions">
-              <a class="payment-link" href="#contact" data-stripe-product="website-care-deposit">Request Website Care</a>
-              <span class="payment-note">Start with the audit. Deposit/payment links activate after scope is confirmed.</span>
-            </div>
-          </article>
-          <article class="panel price-card featured">
-            <span class="price-label">Conversion</span>
-            <div class="price"><strong>$1,500</strong><span>/ month</span></div>
-            <h3>Website + Chatbot</h3>
-            <p class="summary">Everything in Website Care, plus a custom chatbot built around the client's services, FAQs, lead flow, and customer questions.</p>
-            <ul class="feature-list">
-              <li>Custom website chatbot deployment</li>
-              <li>Service-specific answers and lead qualification</li>
-              <li>Customer question capture for follow-up</li>
-              <li>Website traffic and visitor behavior info</li>
-              <li>Monthly improvement recommendations</li>
-            </ul>
-            <p class="price-note">Best fit: service businesses that want the website answering questions and collecting better leads while they work.</p>
-            <div class="payment-actions">
-              <a class="payment-link primary" href="#contact" data-stripe-product="website-chatbot-deposit">Start Website + Chatbot</a>
-              <span class="payment-note">Start with the audit. Deposit/payment links activate after scope is confirmed.</span>
-            </div>
-          </article>
-          <article class="panel price-card">
-            <span class="price-label">Growth</span>
-            <div class="price"><strong>$2,000</strong><span>/ month</span></div>
-            <h3>Website + Review Agent</h3>
-            <p class="summary">Everything in Conversion, plus a post-service follow-up agent that protects reputation and turns happy customers into reviews.</p>
-            <ul class="feature-list">
-              <li>Automated post-service customer follow-up</li>
-              <li>Positive/negative sentiment routing</li>
-              <li>Negative replies routed directly to owner email</li>
-              <li>Positive replies asked for a Google review</li>
-              <li>Review growth system to boost visibility and lead generation</li>
-            </ul>
-            <p class="price-note">Best fit: businesses that already do good work and need a reliable system to capture more public proof.</p>
-            <div class="payment-actions">
-              <a class="payment-link" href="#contact" data-stripe-product="review-agent-subscription">Discuss Review Agent</a>
-              <span class="payment-note">Monthly plans are confirmed after the audit and service-fit review.</span>
-            </div>
-          </article>
+        <div>
+          <p class="section-copy">The engagement stays senior and direct. We diagnose the commercial problem, design the system, build the page set, and leave the business with a site that can keep improving after launch.</p>
+          <div class="process-list" aria-label="Website development process">
+            <article class="process">
+              <div class="step">01</div>
+              <div>
+                <h3>Private build review</h3>
+                <p>We evaluate positioning, visual authority, mobile conversion, search foundations, and the lead path that currently exists.</p>
+              </div>
+            </article>
+            <article class="process">
+              <div class="step">02</div>
+              <div>
+                <h3>Blueprint and scope</h3>
+                <p>The build is mapped around a tight set of pages, content proof, conversion goals, and launch requirements.</p>
+              </div>
+            </article>
+            <article class="process">
+              <div class="step">03</div>
+              <div>
+                <h3>Design and development</h3>
+                <p>The site is built as a fast, responsive, accessible web experience with premium visual direction and clean technical execution.</p>
+              </div>
+            </article>
+            <article class="process">
+              <div class="step">04</div>
+              <div>
+                <h3>Launch and iteration</h3>
+                <p>After launch, the platform can support landing pages, new service lines, measurement improvements, and ongoing conversion refinement.</p>
+              </div>
+            </article>
+          </div>
         </div>
       </div>
     </section>
 
-    <section id="deliverables" aria-labelledby="deliverables-title">
-      <div class="wrap">
-        <div class="section-head"><h2 id="deliverables-title">Free Audit Deliverables</h2></div>
-        <div class="check-grid">
-          <div class="check-item"><span class="check-icon">✓</span><div><h3>Website Score & Breakdown</h3><p>Overall health plus mobile, SEO, CTA, and trust scores.</p></div></div>
-          <div class="check-item"><span class="check-icon">✓</span><div><h3>Competitor Comparison</h3><p>See how you stack up against local competitors.</p></div></div>
-          <div class="check-item"><span class="check-icon">✓</span><div><h3>Issue List & Priority Fixes</h3><p>Ranked by impact so you know what to fix first.</p></div></div>
-          <div class="check-item"><span class="check-icon">✓</span><div><h3>Suggested Next Steps</h3><p>A clear roadmap for fixing your biggest problems.</p></div></div>
-          <div class="check-item"><span class="check-icon">✓</span><div><h3>Lead-Capture Recommendations</h3><p>How to make it easier for customers to contact you.</p></div></div>
-          <div class="check-item"><span class="check-icon">✓</span><div><h3>Implementation Support</h3><p>We can help you fix issues or rebuild your site.</p></div></div>
-          <div class="check-item"><span class="check-icon">✓</span><div><h3>Local SEO Recommendations</h3><p>Specific steps to improve your Google visibility.</p></div></div>
-          <div class="check-item"><span class="check-icon">✓</span><div><h3>Free Audit</h3><p>No credit card, no hidden fee for the initial audit, no obligation.</p></div></div>
+    <section class="section" id="contact" aria-labelledby="contact-title">
+      <div class="cta">
+        <div>
+          <p class="section-kicker">Private build review</p>
+          <h2 id="contact-title">Bring the site up to the standard of the company.</h2>
+          <p class="section-copy">For businesses with real expertise, strong economics, and a website that no longer reflects either. Request a private review and we will identify the highest-leverage path to a premium web presence.</p>
+          <div class="section-actions">
+            <a class="button primary" href="mailto:dylan@outlawintelligence.com?subject=Private%20Build%20Review%20Request&amp;body=Hi%20Dylan%2C%0A%0AI%27d%20like%20to%20request%20a%20private%20build%20review%20for%20our%20website.%0A%0ACompany%3A%0AWebsite%3A%0APriority%3A%0A">Email Outlaw Intelligence</a>
+            <a class="button secondary" href="#process">See the process</a>
+          </div>
         </div>
+        <aside class="cta-panel" aria-label="Engagement priorities">
+          <div class="cta-panel-header">
+            <strong>Typical first engagement</strong>
+            <span>Premium redesign and conversion rebuild for an established service business.</span>
+          </div>
+          <ul class="cta-list">
+            <li>Messaging and page architecture for the core offer</li>
+            <li>Homepage, service pages, proof sections, and conversion paths</li>
+            <li>Responsive static implementation with accessible, fast-loading markup</li>
+            <li>Metadata, structured content, analytics hooks, and launch cleanup</li>
+            <li>Post-launch recommendations for search, campaigns, and proof expansion</li>
+          </ul>
+        </aside>
       </div>
     </section>
 
-    <section class="cta-band" aria-labelledby="cta-title">
-      <div class="wrap">
-        <h2 id="cta-title">Want to know what your website is costing you?</h2>
-        <p>Get your free website audit today. No credit card required. Takes just a few minutes to request.</p>
-        <a class="button" href="#contact">Get My Free Website Audit <span class="arrow">→</span></a>
-      </div>
-    </section>
-
-    <section id="contact" aria-labelledby="contact-title">
-      <div class="wrap">
-        <div class="section-head"><h2 id="contact-title">Request Your Free Audit</h2><p>Tell us about your business and we will prepare a practical website audit with prioritized fixes.</p></div>
-        <div class="form-shell">
-          <form id="audit-form" method="post" action="mailto:audits@outlawintelligence.ai" enctype="text/plain" aria-label="Website audit request form">
-            <label for="name">Your Name *<input id="name" name="name" autocomplete="name" required placeholder="John Smith"></label>
-            <label for="business">Business Name *<input id="business" name="business" autocomplete="organization" required placeholder="Your Business Name"></label>
-            <label for="website">Website URL *<input id="website" name="website" required inputmode="url" autocomplete="url" placeholder="https://yourwebsite.com"></label>
-            <label for="email">Email *<input id="email" name="email" type="email" autocomplete="email" required placeholder="you@business.com"></label>
-            <label for="phone">Phone<input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="(555) 123-4567"></label>
-            <label for="industry">Business Type<select id="industry" name="industry"><option>Contractor / home service</option><option>Restaurant / cafe</option><option>Auto shop</option><option>Fitness / wellness</option><option>Retail store</option><option>Professional service</option><option>Other local business</option></select></label>
-            <label for="message">Main Goal / Message<textarea id="message" name="message" placeholder="What is your biggest website challenge? (optional)"></textarea></label>
-            <label class="policy-consent" for="consent"><input id="consent" name="consent" type="checkbox" required><span>I agree to be contacted about my audit request and understand my information will be handled under the <a href="privacy.html">Privacy Policy</a>.</span></label>
-            <button class="button wide" type="submit" id="generate-brief">Send My Audit Request</button>
-          </form>
-          <div class="form-output" id="lead-output" aria-live="polite">No credit card required. Submit the form to open a prepared email to <strong>audits@outlawintelligence.ai</strong>.</div>
-          <p class="launch-note">Prefer email? Contact <a href="mailto:audits@outlawintelligence.ai">audits@outlawintelligence.ai</a>. Paid work begins only after scope and payment terms are confirmed.</p>
-        </div>
-      </div>
-    </section>
+    <footer class="footer">
+      <span>Outlaw Intelligence LLC | Premium website development platform</span>
+      <span><a href="mailto:dylan@outlawintelligence.com">dylan@outlawintelligence.com</a></span>
+    </footer>
   </main>
-
-
-  <aside class="chatbot-widget" id="chatbot-widget" aria-label="Website audit chatbot" aria-live="polite">
-    <div class="chatbot-panel" id="chatbot-panel">
-      <div class="chatbot-header">
-        <div><strong>Outlaw Audit Assistant</strong><span>Website audit FAQ assistant</span></div>
-        <button class="chatbot-close" type="button" id="chatbot-close" aria-label="Close chatbot">×</button>
-      </div>
-      <div class="chatbot-messages" id="chatbot-messages"></div>
-      <div class="chatbot-quick-actions" aria-label="Quick chatbot prompts">
-        <button type="button" data-prompt="What does the free audit include?">Free audit</button>
-        <button type="button" data-prompt="What plan should I choose?">Choose a plan</button>
-        <button type="button" data-prompt="How does the chatbot plan work?">Chatbot plan</button>
-        <button type="button" data-prompt="How do I request an audit?">Request audit</button>
-      </div>
-      <form class="chatbot-form" id="chatbot-form">
-        <input id="chatbot-input" autocomplete="off" placeholder="Ask about audits, pricing, or chatbots…" aria-label="Chat message">
-        <button type="submit">Send</button>
-      </form>
-      <div class="chatbot-disclaimer">This assistant answers common questions and guides you to the audit form. Do not submit confidential information in chat.</div>
-    </div>
-    <button class="chatbot-toggle" type="button" id="chatbot-toggle" aria-label="Open Outlaw Audit Assistant" aria-expanded="false" aria-controls="chatbot-panel">+</button>
-  </aside>
-
-  <footer>
-    <div class="wrap">
-      <div class="footer-grid">
-        <div><div class="footer-brand"><span class="mark"><img class="brand-logo" src="assets/outlaw-intelligence-mark-transparent.png" alt="Outlaw Intelligence monogram logo"></span><span>Outlaw Intelligence</span></div><p style="max-width:320px">Helping local businesses find and fix website problems that cost customers.</p></div>
-        <div class="footer-col"><strong>Quick Links</strong><a href="#what-we-check">What We Check</a><a href="#how-it-works">How It Works</a><a href="#pricing">Pricing</a><a href="#contact">Contact</a></div>
-        <div class="footer-col"><strong>Plans</strong><a href="#pricing">Website Care</a><a href="#pricing">Website + Chatbot</a><a href="#pricing">Review Agent</a><a href="#contact">Free Audit</a></div>
-        <div class="footer-col"><strong>Business</strong><a href="mailto:audits@outlawintelligence.ai">audits@outlawintelligence.ai</a><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms of Service</a><a href="refunds.html">Refund Policy</a></div>
-      </div>
-      <div class="copyright">© 2026 Outlaw Intelligence. OutlawIntelligence.ai.</div>
-    </div>
-  </footer>
-
-  <script>
-    const button = document.getElementById('generate-brief');
-    const output = document.getElementById('lead-output');
-    if (button && output) {
-      button.closest('form').addEventListener('submit', (event) => {
-        event.preventDefault();
-        if (!event.currentTarget.checkValidity()) { event.currentTarget.reportValidity(); return; }
-        const name = document.getElementById('name').value.trim() || 'Prospect';
-        const business = document.getElementById('business').value.trim() || 'Unnamed business';
-        const website = document.getElementById('website').value.trim() || 'No website provided';
-        const email = document.getElementById('email').value.trim() || 'No email provided';
-        const phone = document.getElementById('phone').value.trim() || 'No phone provided';
-        const industry = document.getElementById('industry').value;
-        const message = document.getElementById('message').value.trim() || 'No optional challenge entered.';
-        const brief = `AUDIT REQUEST — ${business}
-Contact: ${name} | ${email} | ${phone}
-Website: ${website}
-Business type: ${industry}
-Challenge: ${message}
-Next step: Outlaw Intelligence reviews the site, local search presence, trust signals, speed/UX, competitor gaps, and priority fixes.
-Submission route: prepared email to audits@outlawintelligence.ai.`;
-        output.textContent = brief;
-        const subject = encodeURIComponent(`Free Website Audit Request — ${business}`);
-        const body = encodeURIComponent(brief);
-        window.location.href = `mailto:audits@outlawintelligence.ai?subject=${subject}&body=${body}`;
-        try { localStorage.setItem('outlawAuditRequestPreview', brief); } catch (error) {}
-      });
-    }
-    try {
-      const saved = localStorage.getItem('outlawAuditRequestPreview');
-      if (saved && output) output.textContent = saved;
-    } catch (error) {}
-
-    const chatbotWidget = document.getElementById('chatbot-widget');
-    const chatbotToggle = document.getElementById('chatbot-toggle');
-    const chatbotClose = document.getElementById('chatbot-close');
-    const chatbotMessages = document.getElementById('chatbot-messages');
-    const chatbotForm = document.getElementById('chatbot-form');
-    const chatbotInput = document.getElementById('chatbot-input');
-
-    const botAnswers = [
-      {
-        match: ['help my company', 'help my business', 'benefit my company', 'benefit my business', 'how can this help', 'how would this help'],
-        answer: 'Outlaw Intelligence helps your company turn more website visitors into qualified leads. We identify where customers are getting lost, improve mobile usability and calls to action, strengthen local search visibility and trust signals, and keep the site current. Automation can then answer common questions, capture leads while you are busy, and follow up with customers for reviews. The result is a clearer online presence, less missed business, and a practical system that supports growth without adding more work to your team.'
-      },
-      {
-        match: ['free audit', 'audit include', 'what do you check', 'website audit'],
-        answer: 'The free audit checks mobile experience, call/quote buttons, local SEO, Google Business Profile, service pages, trust signals, speed/UX, and competitor gaps. It produces a prioritized fix list — not vague agency fog.'
-      },
-      {
-        match: ['chatbot', 'website chatbot', 'lead capture', 'faq automation'],
-        answer: 'The chatbot plan is built around your services, FAQs, lead flow, and common customer questions. It helps visitors get answers faster and guides serious prospects toward the audit request form.'
-      },
-      {
-        match: ['pricing', 'price', 'monthly plan', 'plan cost', 'choose a plan'],
-        answer: 'There are three monthly paths: $1,000/mo Website Care, $1,500/mo Website + Chatbot, and $2,000/mo Website + Review Agent. Start with Website Care if the site is weak. Add the chatbot when you want lead capture and FAQ automation.'
-      },
-      {
-        match: ['review agent', 'google review', 'reviews', 'reputation'],
-        answer: 'The Review Agent tier follows up after service. Negative replies route to the owner privately; positive replies are guided toward a Google review request. That protects reputation and turns good work into public proof.'
-      },
-      {
-        match: ['request an audit', 'contact you', 'get started', 'book an audit', 'schedule an audit'],
-        answer: 'Use the Free Audit form near the bottom of the page. It asks for your business name, website, contact details, business type, and main goal so the audit can start with useful context.'
-      }
-    ];
-
-    function addChatMessage(text, role = 'bot') {
-      if (!chatbotMessages) return;
-      const item = document.createElement('div');
-      item.className = `chat-message ${role}`;
-      item.textContent = text;
-      chatbotMessages.appendChild(item);
-      chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
-    }
-
-    function answerChat(message) {
-      const normalized = message.toLowerCase().replace(/[^a-z0-9$]+/g, ' ').trim();
-      const words = normalized.split(/\s+/);
-      const found = botAnswers.find(entry => entry.match.some(keyword =>
-        keyword.includes(' ') ? normalized.includes(keyword) : words.includes(keyword)
-      ));
-      return found ? found.answer : 'For questions outside the website audit, pricing, chatbot, review agent, or getting started, please email audits@outlawintelligence.ai and we will respond directly.';
-    }
-
-    function openChatbot() {
-      if (!chatbotWidget || !chatbotToggle) return;
-      chatbotWidget.classList.add('open');
-      chatbotToggle.setAttribute('aria-expanded', 'true');
-      if (chatbotMessages && !chatbotMessages.dataset.started) {
-        addChatMessage('I\'m the Outlaw Audit Assistant. Ask how this can help your company, or ask about the free audit, pricing, chatbot plan, or review agent. For anything else, email audits@outlawintelligence.ai.');
-        chatbotMessages.dataset.started = 'true';
-      }
-      setTimeout(() => chatbotInput && chatbotInput.focus(), 50);
-    }
-
-    function closeChatbot() {
-      if (!chatbotWidget || !chatbotToggle) return;
-      chatbotWidget.classList.remove('open');
-      chatbotToggle.setAttribute('aria-expanded', 'false');
-    }
-
-    if (chatbotToggle) chatbotToggle.addEventListener('click', openChatbot);
-    if (chatbotClose) chatbotClose.addEventListener('click', closeChatbot);
-    document.querySelectorAll('[data-prompt]').forEach((quickButton) => {
-      quickButton.addEventListener('click', () => {
-        const prompt = quickButton.getAttribute('data-prompt');
-        addChatMessage(prompt, 'user');
-        addChatMessage(answerChat(prompt), 'bot');
-      });
-    });
-    if (chatbotForm) {
-      chatbotForm.addEventListener('submit', (event) => {
-        event.preventDefault();
-        const message = chatbotInput.value.trim();
-        if (!message) return;
-        addChatMessage(message, 'user');
-        chatbotInput.value = '';
-        addChatMessage(answerChat(message), 'bot');
-      });
-    }
-  </script>
 </body>
 </html>
