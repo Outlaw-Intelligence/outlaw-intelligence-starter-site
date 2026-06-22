@@ -3,1274 +3,409 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Outlaw Intelligence designs, builds, and optimizes premium websites for ambitious service businesses that need faster launches, stronger trust, and better conversion.">
-  <title>Outlaw Intelligence | Premium Website Development Platform</title>
-  <link rel="icon" href="assets/outlaw-intelligence-mark-transparent.png">
+  <meta name="color-scheme" content="dark">
+  <title>Outlaw Intelligence | AI Website Systems for Service Businesses</title>
+  <meta name="description" content="Outlaw Intelligence builds premium AI-powered websites, chatbots, reputation systems, and conversion infrastructure for service businesses.">
+  <meta property="og:title" content="Outlaw Intelligence | AI Website Systems for Service Businesses">
+  <meta property="og:description" content="Premium websites, chatbots, reputation systems, and conversion infrastructure for service businesses.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://outlawintelligenceai.com/">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://outlawintelligenceai.com/">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Outlaw Intelligence LLC",
+    "url": "https://outlawintelligenceai.com/",
+    "email": "dylan@outlawintelligenceai.com",
+    "areaServed": "United States",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Salt Lake City",
+      "addressRegion": "UT",
+      "addressCountry": "US"
+    },
+    "description": "AI-powered website development, chatbot, reputation automation, and conversion infrastructure for service businesses.",
+    "offers": [
+      {"@type":"Offer","name":"Website Care","price":"1000","priceCurrency":"USD","priceSpecification":{"@type":"UnitPriceSpecification","billingDuration":"P1M"}},
+      {"@type":"Offer","name":"Website + Chatbot","price":"1500","priceCurrency":"USD","priceSpecification":{"@type":"UnitPriceSpecification","billingDuration":"P1M"}},
+      {"@type":"Offer","name":"Website + Reputation Agent","price":"2000","priceCurrency":"USD","priceSpecification":{"@type":"UnitPriceSpecification","billingDuration":"P1M"}}
+    ]
+  }
+  </script>
   <style>
     :root {
-      color-scheme: dark;
-      --bg: #090a0c;
-      --bg-soft: #101317;
-      --ink: #f6f4ee;
-      --muted: #b5b0a5;
-      --quiet: #777267;
-      --panel: rgba(246, 244, 238, 0.07);
-      --panel-strong: rgba(246, 244, 238, 0.11);
-      --line: rgba(246, 244, 238, 0.15);
-      --line-strong: rgba(246, 244, 238, 0.26);
-      --ivory: #f6f4ee;
-      --charcoal: #141414;
-      --bronze: #c49357;
-      --bronze-deep: #8f6230;
-      --blue: #8fb5bd;
-      --green: #9faf91;
-      --rose: #c97968;
-      --shadow: 0 32px 90px rgba(0, 0, 0, 0.42);
-      --radius: 8px;
-      --max: 1180px;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      margin: 0;
-      min-height: 100vh;
-      min-width: 320px;
-      color: var(--ink);
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      line-height: 1.55;
-      background:
-        radial-gradient(circle at 20% 0%, rgba(196, 147, 87, 0.22), transparent 31rem),
-        radial-gradient(circle at 84% 18%, rgba(143, 181, 189, 0.16), transparent 28rem),
-        linear-gradient(180deg, #090a0c 0%, #101317 48%, #08090a 100%);
-    }
-
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      opacity: 0.34;
-      background-image:
-        linear-gradient(rgba(246, 244, 238, 0.035) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(246, 244, 238, 0.028) 1px, transparent 1px);
-      background-size: 56px 56px;
-      mask-image: linear-gradient(180deg, #000 0%, transparent 70%);
-    }
-
-    a {
-      color: inherit;
-    }
-
-    .page {
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      width: min(var(--max), calc(100% - 40px));
-      min-height: 100vh;
-      margin: 0 auto;
-      padding: 22px 0 54px;
-    }
-
-    .topbar {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 24px;
-      padding: 14px 0 24px;
-    }
-
-    .brand {
-      color: var(--ink);
-      font-size: 0.84rem;
-      font-weight: 850;
-      letter-spacing: 0.17em;
-      text-transform: uppercase;
-    }
-
-    .nav {
-      display: flex;
-      align-items: center;
-      gap: clamp(14px, 3vw, 30px);
-      color: var(--muted);
-      font-size: 0.88rem;
-    }
-
-    .nav a {
-      text-decoration: none;
-    }
-
-    .nav a:hover {
-      color: var(--ink);
-    }
-
-    .nav-cta {
-      min-height: 38px;
-      padding: 9px 13px;
-      color: var(--charcoal);
-      background: var(--ivory);
-      border-radius: var(--radius);
-      font-weight: 800;
-    }
-
-    .hero {
-      position: relative;
-      overflow: hidden;
-      min-height: min(780px, calc(100vh - 46px));
-      border: 1px solid var(--line);
-      border-radius: 18px;
-      background:
-        linear-gradient(135deg, rgba(255, 255, 255, 0.095), rgba(255, 255, 255, 0.025)),
-        linear-gradient(180deg, rgba(9, 10, 12, 0.2), rgba(9, 10, 12, 0.94));
-      box-shadow: var(--shadow);
-    }
-
-    .hero::after {
-      content: "";
-      position: absolute;
-      inset: auto 0 0;
-      height: 44%;
-      pointer-events: none;
-      background: linear-gradient(180deg, transparent, rgba(9, 10, 12, 0.8));
-    }
-
-    .hero-inner {
-      position: relative;
-      z-index: 1;
-      display: grid;
-      grid-template-columns: minmax(0, 1.02fr) minmax(320px, 0.78fr);
-      gap: clamp(36px, 6vw, 72px);
-      min-height: inherit;
-      align-items: center;
-      padding: clamp(34px, 6.6vw, 82px);
-    }
-
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      color: var(--bronze);
-      font-size: 0.76rem;
-      font-weight: 900;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-    }
-
-    .eyebrow::before {
-      content: "";
-      width: 28px;
-      height: 1px;
-      background: var(--bronze);
-    }
-
-    h1,
-    h2,
-    h3,
-    p {
-      overflow-wrap: break-word;
-    }
-
-    h1 {
-      max-width: 880px;
-      margin: 22px 0 22px;
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(3.1rem, 7.2vw, 7.25rem);
-      font-weight: 500;
-      line-height: 0.9;
-      letter-spacing: -0.035em;
-    }
-
-    .lead {
-      max-width: 720px;
-      margin: 0;
-      color: #ded9cf;
-      font-size: clamp(1.08rem, 2vw, 1.32rem);
-    }
-
-    .hero-actions,
-    .section-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 32px;
-    }
-
-    .button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 48px;
-      border-radius: var(--radius);
-      padding: 13px 18px;
-      border: 1px solid transparent;
-      font-weight: 850;
-      line-height: 1.15;
-      text-decoration: none;
-      transition: transform 160ms ease, border-color 160ms ease, background 160ms ease;
-    }
-
-    .button:hover {
-      transform: translateY(-1px);
-    }
-
-    .button.primary {
-      color: var(--charcoal);
-      background: var(--ivory);
-      border-color: var(--ivory);
-    }
-
-    .button.secondary {
-      color: var(--ink);
-      background: rgba(246, 244, 238, 0.035);
-      border-color: var(--line-strong);
-    }
-
-    .button:focus-visible,
-    .nav a:focus-visible {
-      outline: 3px solid rgba(196, 147, 87, 0.75);
-      outline-offset: 4px;
-    }
-
-    .platform-panel {
-      align-self: stretch;
-      display: grid;
-      align-content: end;
-      min-height: 500px;
-    }
-
-    .interface {
-      position: relative;
-      border: 1px solid var(--line);
-      border-radius: 14px;
-      overflow: hidden;
-      background: rgba(11, 13, 15, 0.82);
-      box-shadow: 0 30px 70px rgba(0, 0, 0, 0.38);
-      backdrop-filter: blur(18px);
-    }
-
-    .interface::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      pointer-events: none;
-      background:
-        linear-gradient(120deg, rgba(196, 147, 87, 0.16), transparent 40%),
-        linear-gradient(270deg, rgba(143, 181, 189, 0.14), transparent 42%);
-    }
-
-    .interface-top {
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-      padding: 16px 18px;
-      border-bottom: 1px solid var(--line);
-      color: var(--muted);
-      font-size: 0.78rem;
-      font-weight: 800;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-    }
-
-    .window-dots {
-      display: inline-flex;
-      gap: 7px;
-    }
-
-    .window-dots span {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: rgba(246, 244, 238, 0.26);
-    }
-
-    .interface-body {
-      position: relative;
-      display: grid;
-      gap: 1px;
-      background: rgba(246, 244, 238, 0.11);
-    }
-
-    .dash-row {
-      display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 18px;
-      align-items: center;
-      padding: 20px 18px;
-      background: rgba(13, 15, 18, 0.88);
-    }
-
-    .dash-row strong {
-      display: block;
-      margin-bottom: 4px;
-      color: var(--ink);
-      font-size: 1rem;
-    }
-
-    .dash-row span {
-      color: var(--muted);
-      font-size: 0.92rem;
-    }
-
-    .metric {
-      min-width: 86px;
-      color: var(--bronze);
-      font-size: 2.1rem;
-      font-weight: 900;
-      line-height: 1;
-      text-align: right;
-      letter-spacing: -0.035em;
-    }
-
-    .metric small {
-      color: var(--quiet);
-      font-size: 0.85rem;
-      letter-spacing: 0;
-    }
-
-    .hero-proof {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      margin-top: 18px;
-      border: 1px solid var(--line);
-      border-radius: 14px;
-      overflow: hidden;
-      background: rgba(246, 244, 238, 0.055);
-    }
-
-    .hero-proof div {
-      min-height: 118px;
-      padding: 20px;
-      border-right: 1px solid var(--line);
-    }
-
-    .hero-proof div:last-child {
-      border-right: 0;
-    }
-
-    .hero-proof strong {
-      display: block;
-      color: var(--ivory);
-      font-size: 1.35rem;
-      line-height: 1;
-      letter-spacing: -0.02em;
-    }
-
-    .hero-proof span {
-      display: block;
-      margin-top: 10px;
-      color: var(--muted);
-      font-size: 0.9rem;
-    }
-
-    .section {
-      padding: clamp(54px, 7vw, 90px) 0 0;
-    }
-
-    .section-grid {
-      display: grid;
-      grid-template-columns: minmax(230px, 0.38fr) minmax(0, 1fr);
-      gap: clamp(30px, 5vw, 70px);
-      align-items: start;
-    }
-
-    .section-kicker {
-      margin: 0 0 11px;
-      color: var(--bronze);
-      font-size: 0.76rem;
-      font-weight: 900;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-    }
-
-    h2 {
-      margin: 0;
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(2.1rem, 4.4vw, 4rem);
-      font-weight: 500;
-      line-height: 0.98;
-      letter-spacing: -0.025em;
-    }
-
-    .section-copy {
-      max-width: 76ch;
-      margin: 0;
-      color: var(--muted);
-      font-size: 1.04rem;
-    }
-
-    .section-copy + .capability-grid,
-    .section-copy + .proof-grid,
-    .section-copy + .process-list,
-    .section-copy + .stack {
-      margin-top: 26px;
-    }
-
-    .capability-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 1px;
-      border: 1px solid var(--line);
-      border-radius: 14px;
-      overflow: hidden;
-      background: var(--line);
-    }
-
-    .capability {
-      min-height: 218px;
-      padding: 26px;
-      background: rgba(246, 244, 238, 0.055);
-    }
-
-    .icon {
-      display: inline-grid;
-      place-items: center;
-      width: 36px;
-      height: 36px;
-      margin-bottom: 20px;
-      border: 1px solid rgba(196, 147, 87, 0.42);
-      border-radius: var(--radius);
-      color: var(--bronze);
-      font-size: 1.08rem;
-      font-weight: 900;
-    }
-
-    .capability h3,
-    .proof-card h3,
-    .process h3,
-    .stack-item h3 {
-      margin: 0 0 9px;
-      color: var(--ink);
-      font-size: 1.18rem;
-      line-height: 1.25;
-      letter-spacing: -0.01em;
-    }
-
-    .capability p,
-    .proof-card p,
-    .process p,
-    .stack-item p {
-      margin: 0;
-      color: var(--muted);
-    }
-
-    .light-band {
-      color: var(--charcoal);
-      border-radius: 18px;
-      background: var(--ivory);
-      box-shadow: var(--shadow);
-      overflow: hidden;
-    }
-
-    .light-band .section-grid {
-      padding: clamp(34px, 6vw, 66px);
-    }
-
-    .light-band .section-kicker {
-      color: var(--bronze-deep);
-    }
-
-    .light-band h2,
-    .light-band .proof-card h3,
-    .light-band .stack-item h3 {
-      color: var(--charcoal);
-    }
-
-    .light-band .section-copy,
-    .light-band .proof-card p,
-    .light-band .stack-item p {
-      color: #56534d;
-    }
-
-    .proof-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 1px;
-      border: 1px solid rgba(20, 20, 20, 0.16);
-      border-radius: 14px;
-      overflow: hidden;
-      background: rgba(20, 20, 20, 0.16);
-    }
-
-    .proof-card {
-      min-height: 210px;
-      padding: 26px;
-      background: #fbfaf5;
-    }
-
-    .proof-value {
-      display: block;
-      margin-bottom: 18px;
-      color: var(--bronze-deep);
-      font-size: clamp(2.2rem, 4vw, 3.4rem);
-      font-weight: 900;
-      line-height: 0.9;
-      letter-spacing: -0.05em;
-    }
-
-    .proof-value small {
-      color: #777267;
-      font-size: 1rem;
-      letter-spacing: 0;
-    }
-
-    .stack {
-      display: grid;
-      gap: 12px;
-    }
-
-    .stack-item {
-      display: grid;
-      grid-template-columns: 98px 1fr;
-      gap: 22px;
-      padding: 24px 0;
-      border-top: 1px solid var(--line);
-    }
-
-    .stack-item:last-child {
-      border-bottom: 1px solid var(--line);
-    }
-
-    .tag {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 30px;
-      border: 1px solid var(--line-strong);
-      border-radius: 999px;
-      padding: 6px 10px;
-      color: var(--bronze);
-      font-size: 0.72rem;
-      font-weight: 900;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      white-space: nowrap;
-    }
-
-    .process-list {
-      display: grid;
-      gap: 1px;
-      border: 1px solid var(--line);
-      border-radius: 14px;
-      overflow: hidden;
-      background: var(--line);
-    }
-
-    .process {
-      display: grid;
-      grid-template-columns: 84px 1fr;
-      gap: 22px;
-      padding: 25px;
-      background: rgba(246, 244, 238, 0.055);
-    }
-
-    .step {
-      color: var(--blue);
-      font-size: 0.76rem;
-      font-weight: 900;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-    }
-
-    .cta {
-      display: grid;
-      grid-template-columns: minmax(0, 0.92fr) minmax(320px, 1fr);
-      gap: clamp(28px, 5vw, 54px);
-      align-items: center;
-      padding: clamp(34px, 6vw, 68px);
-      border: 1px solid var(--line);
-      border-radius: 18px;
-      background:
-        linear-gradient(145deg, rgba(246, 244, 238, 0.12), rgba(246, 244, 238, 0.035)),
-        rgba(9, 10, 12, 0.82);
-      box-shadow: var(--shadow);
-    }
-
-    .cta h2 {
-      margin-bottom: 18px;
-    }
-
-    .cta-panel {
-      border: 1px solid var(--line);
-      border-radius: 14px;
-      overflow: hidden;
-      background: rgba(9, 10, 12, 0.66);
-    }
-
-    .cta-panel-header {
-      padding: 22px;
-      border-bottom: 1px solid var(--line);
-    }
-
-    .cta-panel-header strong {
-      display: block;
-      color: var(--ink);
-      font-size: 1.18rem;
-      line-height: 1.2;
-    }
-
-    .cta-panel-header span {
-      color: var(--muted);
-    }
-
-    .cta-list {
-      display: grid;
-      gap: 1px;
-      margin: 0;
-      padding: 0;
-      list-style: none;
-      background: var(--line);
-    }
-
-    .cta-list li {
-      display: grid;
-      grid-template-columns: 26px 1fr;
-      gap: 12px;
-      padding: 16px 22px;
-      color: #e8e3d8;
-      background: rgba(13, 15, 18, 0.84);
-    }
-
-    .cta-list li::before {
-      content: "";
-      width: 10px;
-      height: 10px;
-      margin-top: 7px;
-      border-radius: 50%;
-      background: var(--bronze);
-      box-shadow: 0 0 0 5px rgba(196, 147, 87, 0.13);
-    }
-
-    .site-footer {
-      display: grid;
-      grid-template-columns: minmax(260px, 1fr) auto;
-      gap: clamp(24px, 5vw, 60px);
-      margin-top: clamp(58px, 8vw, 96px);
-      padding: 30px 0 0;
-      border-top: 1px solid var(--line);
-      color: var(--muted);
-      font-size: 0.9rem;
-    }
-
-    .footer-brand {
-      display: grid;
-      gap: 8px;
-    }
-
-    .footer-brand strong {
-      color: var(--ink);
-      font-size: 0.92rem;
-      font-weight: 900;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-    }
-
-    .footer-brand span {
-      max-width: 54ch;
-    }
-
-    .footer-links {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: flex-end;
-      gap: 12px 18px;
-      align-content: start;
-    }
-
-    .site-footer a {
-      text-decoration-color: rgba(196, 147, 87, 0.5);
-      text-underline-offset: 4px;
-    }
-
-    .site-footer a:hover {
-      color: var(--ink);
-    }
-
-    .footer-meta {
-      grid-column: 1 / -1;
-      display: flex;
-      justify-content: space-between;
-      gap: 18px;
-      flex-wrap: wrap;
-      padding-top: 18px;
-      border-top: 1px solid rgba(246, 244, 238, 0.08);
-      color: var(--quiet);
-      font-size: 0.82rem;
-    }
-
-    .chat-widget {
-      position: fixed;
-      right: max(18px, env(safe-area-inset-right));
-      bottom: max(18px, env(safe-area-inset-bottom));
-      z-index: 20;
-      width: min(390px, calc(100vw - 28px));
-      color: var(--ink);
-      font-size: 0.92rem;
-    }
-
-    .chat-toggle {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 14px;
-      width: 100%;
-      min-height: 54px;
-      border: 1px solid var(--line-strong);
-      border-radius: 14px;
-      padding: 12px 14px;
-      color: var(--ink);
-      background: rgba(13, 15, 18, 0.92);
-      box-shadow: 0 18px 54px rgba(0, 0, 0, 0.36);
-      backdrop-filter: blur(18px);
-      cursor: pointer;
-    }
-
-    .chat-toggle span {
-      display: grid;
-      gap: 1px;
-      text-align: left;
-    }
-
-    .chat-toggle strong {
-      font-size: 0.86rem;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-    }
-
-    .chat-toggle small {
-      color: var(--muted);
-      font-size: 0.78rem;
-    }
-
-    .chat-toggle-icon {
-      display: inline-grid;
-      flex: 0 0 auto;
-      place-items: center;
-      width: 32px;
-      height: 32px;
-      border-radius: 50%;
-      color: var(--charcoal);
-      background: var(--ivory);
-      font-weight: 950;
-    }
-
-    .chat-panel {
-      display: none;
-      overflow: hidden;
-      margin-bottom: 10px;
-      border: 1px solid var(--line);
-      border-radius: 16px;
-      background: rgba(9, 10, 12, 0.96);
-      box-shadow: 0 30px 90px rgba(0, 0, 0, 0.46);
-      backdrop-filter: blur(20px);
-    }
-
-    .chat-widget.open .chat-panel {
-      display: block;
-    }
-
-    .chat-header {
-      display: flex;
-      align-items: start;
-      justify-content: space-between;
-      gap: 16px;
-      padding: 18px;
-      border-bottom: 1px solid var(--line);
-      background: linear-gradient(135deg, rgba(196, 147, 87, 0.14), rgba(246, 244, 238, 0.035));
-    }
-
-    .chat-header strong {
-      display: block;
-      margin-bottom: 3px;
-      color: var(--ink);
-      font-size: 1rem;
-    }
-
-    .chat-header span {
-      color: var(--muted);
-      font-size: 0.84rem;
-    }
-
-    .chat-close {
-      flex: 0 0 auto;
-      width: 32px;
-      height: 32px;
-      border: 1px solid var(--line);
-      border-radius: 50%;
-      color: var(--muted);
-      background: rgba(246, 244, 238, 0.04);
-      cursor: pointer;
-    }
-
-    .chat-messages {
-      display: grid;
-      gap: 10px;
-      max-height: min(370px, 46vh);
-      overflow-y: auto;
-      padding: 16px;
-    }
-
-    .chat-message {
-      max-width: 88%;
-      border: 1px solid var(--line);
-      border-radius: 12px;
-      padding: 10px 12px;
-      color: #e8e3d8;
-      background: rgba(246, 244, 238, 0.055);
-    }
-
-    .chat-message.user {
-      justify-self: end;
-      color: var(--charcoal);
-      background: var(--ivory);
-      border-color: var(--ivory);
-    }
-
-    .chat-message.bot a {
-      color: var(--ivory);
-      font-weight: 850;
-      text-decoration-color: rgba(196, 147, 87, 0.64);
-      text-underline-offset: 3px;
-    }
-
-    .chat-quick {
-      display: flex;
-      gap: 8px;
-      overflow-x: auto;
-      padding: 0 16px 14px;
-    }
-
-    .chat-quick button {
-      flex: 0 0 auto;
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      padding: 8px 10px;
-      color: var(--muted);
-      background: rgba(246, 244, 238, 0.035);
-      cursor: pointer;
-      font-size: 0.78rem;
-    }
-
-    .chat-form {
-      display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 8px;
-      padding: 14px;
-      border-top: 1px solid var(--line);
-      background: rgba(246, 244, 238, 0.035);
-    }
-
-    .chat-form input {
-      min-width: 0;
-      border: 1px solid var(--line);
-      border-radius: 10px;
-      padding: 11px 12px;
-      color: var(--ink);
-      background: rgba(9, 10, 12, 0.74);
-      outline: none;
-    }
-
-    .chat-form input:focus {
-      border-color: rgba(196, 147, 87, 0.72);
-    }
-
-    .chat-form button {
-      border: 1px solid var(--ivory);
-      border-radius: 10px;
-      padding: 0 14px;
-      color: var(--charcoal);
-      background: var(--ivory);
-      font-weight: 900;
-      cursor: pointer;
-    }
-
-    .chat-toggle:focus-visible,
-    .chat-close:focus-visible,
-    .chat-quick button:focus-visible,
-    .chat-form button:focus-visible,
-    .chat-form input:focus-visible {
-      outline: 3px solid rgba(196, 147, 87, 0.75);
-      outline-offset: 3px;
-    }
-
-    @media (max-width: 980px) {
-      .hero {
-        min-height: auto;
-      }
-
-      .hero-inner,
-      .section-grid,
-      .cta {
-        grid-template-columns: 1fr;
-      }
-
-      .platform-panel {
-        min-height: 0;
-      }
-
-      .proof-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    @media (max-width: 760px) {
-      .page {
-        width: min(100% - 24px, var(--max));
-        padding-top: 14px;
-      }
-
-      .topbar {
-        align-items: flex-start;
-        flex-direction: column;
-      }
-
-      .nav {
-        width: 100%;
-        justify-content: space-between;
-        gap: 12px;
-        font-size: 0.82rem;
-      }
-
-      .nav a:not(.nav-cta) {
-        display: none;
-      }
-
-      .nav-cta {
-        width: 100%;
-        text-align: center;
-      }
-
-      .site-footer {
-        grid-template-columns: 1fr;
-      }
-
-      .footer-links {
-        justify-content: flex-start;
-      }
-
-      .chat-widget {
-        right: 12px;
-        bottom: 12px;
-        width: calc(100vw - 24px);
-      }
-
-      .chat-messages {
-        max-height: 42vh;
-      }
-
-      .hero-inner {
-        padding: 28px 20px;
-      }
-
-      h1 {
-        font-size: clamp(2.72rem, 15vw, 4.6rem);
-      }
-
-      .hero-actions,
-      .section-actions {
-        flex-direction: column;
-      }
-
-      .button {
-        width: 100%;
-      }
-
-      .hero-proof,
-      .capability-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .hero-proof div,
-      .hero-proof div:last-child {
-        border-right: 0;
-        border-bottom: 1px solid var(--line);
-      }
-
-      .hero-proof div:last-child {
-        border-bottom: 0;
-      }
-
-      .dash-row,
-      .stack-item,
-      .process {
-        grid-template-columns: 1fr;
-      }
-
-      .metric {
-        text-align: left;
-      }
-
-      .light-band .section-grid,
-      .cta {
-        padding: 26px 20px;
-      }
-
-      .capability,
-      .proof-card {
-        min-height: 0;
-        padding: 22px;
-      }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      *,
-      *::before,
-      *::after {
-        scroll-behavior: auto !important;
-        transition: none !important;
-      }
+      --bg:#04060b;
+      --panel:rgba(5,10,8,.66);
+      --panel-strong:rgba(3,8,5,.86);
+      --line:rgba(255,255,255,.22);
+      --line-strong:rgba(255,255,255,.36);
+      --ink:#f4f8ff;
+      --muted:#b9c8bc;
+      --soft:#dbe8dc;
+      --cyan:#eaffea;
+      --green:#7CFF00;
+      --amber:#ffd77c;
+      --red:#ff6a8c;
+      --shadow:0 18px 70px rgba(0,0,0,.38);
+      --radius:8px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    html,body{margin:0;min-height:100%;background:var(--bg);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;overflow-x:hidden}
+    body::before{content:"";position:fixed;inset:0;background:radial-gradient(circle at 18% 8%,rgba(124,255,0,.18),transparent 26%),linear-gradient(180deg,rgba(3,6,4,.03),rgba(3,6,4,.32) 48%,rgba(3,6,4,.78)),linear-gradient(90deg,rgba(3,6,4,.68),rgba(3,6,4,.10) 44%,rgba(3,6,4,.70));pointer-events:none;z-index:1}
+    body::after{content:"";position:fixed;inset:0;background-image:linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.018) 1px,transparent 1px);background-size:100% 3px,180px 100%;opacity:.10;mix-blend-mode:overlay;pointer-events:none;z-index:1}
+    .wallpaper{position:fixed;inset:0;z-index:0;overflow:hidden}
+    .wallpaper video{width:100%;height:100%;object-fit:cover;filter:saturate(1.24) contrast(1.08) brightness(.82)}
+    .wallpaper .tint{position:absolute;inset:0;background:linear-gradient(180deg,rgba(3,6,4,.00),rgba(3,6,4,.22) 44%,rgba(3,6,4,.72));}
+    .wallpaper .mark{position:absolute;inset:-8% 0;display:flex;flex-direction:column;justify-content:center;gap:10px;pointer-events:none;opacity:.14;transform:skewY(-10deg)}
+    .wm-row{display:flex;gap:34px;white-space:nowrap;font-size:52px;font-weight:900;letter-spacing:0;text-transform:uppercase;color:rgba(255,255,255,.58);-webkit-text-stroke:1px rgba(255,255,255,.28);text-shadow:0 0 26px rgba(124,255,0,.42);animation:drift 38s linear infinite}
+    @keyframes drift{from{transform:translateX(-2%)}to{transform:translateX(-12%)}}
+    .shell{position:relative;z-index:2;max-width:1220px;margin:0 auto;padding:22px 24px 56px}
+    .topbar{display:flex;justify-content:space-between;gap:18px;align-items:center;flex-wrap:wrap;margin-bottom:22px;padding-bottom:18px;border-bottom:1px solid rgba(255,255,255,.18)}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:42px;height:42px;border-radius:var(--radius);background:rgba(124,255,0,.08);border:1px solid rgba(255,255,255,.32);display:grid;place-items:center;font-weight:900;letter-spacing:0;color:#ffffff}
+    .brand h1{margin:0;font-size:15px;line-height:1.12;letter-spacing:0}
+    .brand p{margin:5px 0 0;color:var(--muted);font-size:12px;line-height:1.45;max-width:46ch}
+    .status{display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:flex-end}
+    .pill{display:inline-flex;align-items:center;gap:7px;padding:7px 10px;border-radius:999px;background:rgba(124,255,0,.06);border:1px solid rgba(255,255,255,.24);backdrop-filter:blur(16px);font-size:12px;font-weight:700;color:#dbe7ff}
+    .pill .dot{width:6px;height:6px;border-radius:999px;background:var(--green);box-shadow:0 0 16px rgba(124,255,0,.95)}
+    .banner{margin-bottom:24px;padding:11px 0 0;border-top:1px solid rgba(255,255,255,.24);font-size:13px;line-height:1.55;color:#d7e4fb}
+    .hero{position:relative;overflow:hidden;border-radius:12px;border:1px solid rgba(255,255,255,.28);background:linear-gradient(180deg,rgba(4,12,6,.54),rgba(3,7,4,.82));box-shadow:var(--shadow);padding:34px;min-height:438px}
+    .hero::before{content:"";position:absolute;inset:0;border-top:2px solid rgba(124,255,0,.78);pointer-events:none}
+    .hero-grid{position:relative;display:grid;grid-template-columns:minmax(0,1.12fr) minmax(340px,.88fr);gap:34px;align-items:stretch;min-height:362px}
+    .eyebrow{color:var(--green);text-transform:uppercase;letter-spacing:0;font-size:12px;font-weight:900}
+    .hero h2{margin:12px 0 0;font-size:clamp(52px,5.7vw,74px);line-height:.95;letter-spacing:-.025em;text-transform:uppercase;max-width:720px}
+    .hero h2 span{display:block;color:var(--ink);text-shadow:0 0 34px rgba(82,230,255,.18)}
+    .hero p{margin:18px 0 0;max-width:62ch;color:#cbd7ef;font-size:18px;line-height:1.62}
+    .actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+    .button{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:42px;padding:11px 15px;border-radius:var(--radius);border:1px solid rgba(255,255,255,.12);text-decoration:none;color:var(--ink);font-weight:800;font-size:13px;background:rgba(255,255,255,.045);transition:transform .18s ease,box-shadow .18s ease,background .18s ease,border-color .18s ease}
+    .button:hover{transform:translateY(-1px);box-shadow:0 14px 26px rgba(0,0,0,.35);border-color:rgba(124,255,0,.48)}
+    .button.primary{background:linear-gradient(135deg,rgba(124,255,0,.25),rgba(255,255,255,.08));border-color:rgba(255,255,255,.52);box-shadow:0 0 28px rgba(124,255,0,.16)}
+    .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+    .chip{padding:7px 10px;border-radius:999px;background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.08);font-size:12px;color:#dce6ff}
+    .panel{border-radius:var(--radius);background:var(--panel);border:1px solid var(--line);backdrop-filter:blur(18px);box-shadow:var(--shadow)}
+    .hero-card{position:relative;overflow:hidden;min-height:492px;background:rgba(7,10,15,.74);border:1px solid rgba(255,255,255,.1)}
+    .hero-card::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(124,255,0,.14),rgba(0,0,0,.14) 38%,rgba(0,0,0,.26));pointer-events:none}
+    .hero-card .inner{position:relative;z-index:1;min-height:100%;padding:18px;display:flex;flex-direction:column;justify-content:space-between;gap:16px}
+    .badges{display:flex;flex-wrap:wrap;gap:8px;align-items:flex-start;justify-content:space-between}
+    .tag{display:inline-flex;align-items:center;padding:7px 10px;border-radius:999px;background:rgba(124,255,0,.08);border:1px solid rgba(255,255,255,.32);font-size:11px;font-weight:800;letter-spacing:0;text-transform:uppercase;color:#dfe8ff}
+    .tag.active{background:rgba(124,255,0,.14);border-color:rgba(255,255,255,.36);color:#eaffef}
+    .tag.warn{background:rgba(255,215,124,.12);border-color:rgba(255,215,124,.2);color:#fff2d1}
+    .tag.red{background:rgba(255,106,140,.12);border-color:rgba(255,106,140,.2);color:#ffe0e8}
+    .hero-card h3{margin:0;font-size:33px;line-height:1;letter-spacing:0;text-transform:uppercase;max-width:12ch}
+    .hero-card .sub{margin-top:12px;color:#c4d2f1;line-height:1.58;max-width:54ch}
+    .metrics{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+    .metric{padding:14px;border-radius:var(--radius);background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08)}
+    .metric strong{display:block;font-size:28px;letter-spacing:0}
+    .metric span{display:block;margin-top:4px;font-size:12px;color:var(--muted)}
+    section{margin-top:70px;padding-top:26px;border-top:1px solid rgba(255,255,255,.1)}
+    .hero + section{margin-top:58px}
+    .section-head{margin:0 0 18px}
+    .section-head > div{display:grid;grid-template-columns:minmax(0,.35fr) minmax(0,.65fr);gap:24px;align-items:end}
+    .section-head h3{margin:0;font-size:24px;line-height:1.1;letter-spacing:0}
+    .section-head h3::before{content:"";display:block;width:44px;height:2px;margin-bottom:12px;background:linear-gradient(90deg,var(--green),rgba(255,255,255,.42))}
+    .section-head p{margin:0;color:var(--muted);max-width:72ch;line-height:1.55;font-size:14px}
+    .grid{display:grid;gap:16px}
+    .g4{grid-template-columns:repeat(4,minmax(0,1fr))}
+    .g3{grid-template-columns:repeat(3,minmax(0,1fr))}
+    .g2{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .card{padding:20px;border-radius:var(--radius);background:var(--panel);border:1px solid var(--line);box-shadow:var(--shadow);backdrop-filter:blur(18px)}
+    .card-top{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}
+    .card h4{margin:0;font-size:18px;line-height:1.24;letter-spacing:0}
+    .summary{margin:12px 0 0;color:#c7d2ee;line-height:1.58;font-size:14px}
+    .meta-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:14px}
+    .meta-grid div{padding:12px;border-radius:var(--radius);background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.06)}
+    .meta-grid span{display:block;font-size:11px;text-transform:uppercase;letter-spacing:0;color:var(--muted);font-weight:800}
+    .meta-grid b{display:block;margin-top:6px;font-size:13px;line-height:1.4;color:#eff5ff}
+    .feature-list{margin:16px 0 0;padding-left:18px;color:#d9e5ff;line-height:1.62;font-size:14px}
+    .feature-list li{margin:7px 0}
+    .price-card{display:flex;flex-direction:column;min-height:100%}
+    .price-card .price-label{display:inline-flex;align-self:flex-start;margin-bottom:14px;padding:7px 10px;border-radius:999px;background:rgba(124,255,0,.08);border:1px solid rgba(255,255,255,.32);font-size:11px;font-weight:800;letter-spacing:0;text-transform:uppercase;color:#dfe8ff}
+    .price{display:flex;align-items:flex-end;gap:8px;margin-bottom:8px}
+    .price strong{font-size:42px;letter-spacing:0;line-height:1}
+    .price span{color:var(--muted);font-size:13px;font-weight:700;padding-bottom:4px}
+    .price-card.featured{background:linear-gradient(180deg,rgba(124,255,0,.16),rgba(255,255,255,.055));border-color:rgba(255,255,255,.42)}
+    .price-note{margin:14px 0 0;color:#b8c7ea;font-size:13px;line-height:1.55}
+    .cta-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+    .price-card .cta-row{margin-top:auto;padding-top:18px}
+    .small{min-height:38px;padding:9px 13px;font-size:12px}
+    .timeline{display:grid;gap:10px}
+    .step{display:grid;grid-template-columns:72px 1fr;gap:12px;align-items:start;padding:16px;border-radius:var(--radius);background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.07)}
+    .step .num{font-size:11px;text-transform:uppercase;letter-spacing:0;color:var(--green);font-weight:900}
+    .step h5{margin:2px 0 6px;font-size:15px;line-height:1.2}
+    .step p{margin:0;color:#c6d2ef;font-size:13px;line-height:1.55}
+    .footer{margin-top:46px;padding:22px 0 4px;border-top:1px solid rgba(255,255,255,.1);color:var(--muted);font-size:12px;line-height:1.6;display:grid;grid-template-columns:minmax(0,1.15fr) minmax(260px,.85fr);gap:18px;align-items:start}
+    .footer strong{display:block;color:#f4f8ff;font-size:13px;margin-bottom:4px}
+    .footer a{color:#d9e9ff;text-decoration:none;border-bottom:1px solid rgba(217,233,255,.22)}
+    .footer-links{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:10px 14px}
+    .footer-meta{grid-column:1/-1;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;padding-top:14px;border-top:1px solid rgba(255,255,255,.08);color:#9fb0a5}
+
+    .hero h2 span{-webkit-text-stroke:1px rgba(255,255,255,.34);text-shadow:0 0 30px rgba(124,255,0,.22),0 0 2px rgba(255,255,255,.72)}
+    .card,.hero,.hero-card,.pill,.button,.chip,.metric,.step{outline:1px solid rgba(255,255,255,.06);outline-offset:-2px}
+    .price strong,.metric strong{color:#ffffff;text-shadow:0 0 18px rgba(124,255,0,.25)}
+    a:focus-visible,.button:focus-visible{outline:2px solid var(--green);outline-offset:3px}
+    @media (max-width:1100px){
+      .hero h2{font-size:clamp(48px,7vw,64px)}
+      .hero-grid,.g4,.g3,.g2,.meta-grid{grid-template-columns:1fr 1fr}
+      .section-head > div{grid-template-columns:1fr}
+    }
+    @media (max-width:780px){
+      html,body{width:100%;max-width:100%;overflow-x:hidden}
+      .shell{padding:14px 14px 42px}
+      .topbar{align-items:flex-start;margin-bottom:18px}
+      .status{display:grid;grid-template-columns:1fr;justify-content:flex-start;width:100%;overflow:hidden}
+      .pill{width:100%;max-width:100%;white-space:normal;justify-content:flex-start}
+      .banner{margin-bottom:18px}
+      .hero{padding:20px;min-height:auto}
+      .hero-grid,.g4,.g3,.g2,.meta-grid{grid-template-columns:1fr}
+      .hero h2{font-size:clamp(30px,8vw,36px);line-height:1.02;overflow-wrap:anywhere;word-break:normal}
+      .hero p{font-size:16px}
+      .hero-card{min-height:350px}
+      .hero-card h3{font-size:clamp(26px,7vw,30px);overflow-wrap:anywhere}
+      .badges{display:grid;grid-template-columns:1fr}
+      .tag{width:100%;max-width:100%;white-space:normal}
+      .actions,.cta-row{width:100%}
+      .actions .button,.cta-row .button{width:100%}
+      .button{max-width:100%;white-space:normal;text-align:center}
+      .metrics{grid-template-columns:1fr}
+      .footer{grid-template-columns:1fr}
+      .footer-links{justify-content:flex-start}
+      .brand p{max-width:32ch}
+      section{margin-top:48px;padding-top:22px}
+      .hero + section{margin-top:44px}
+      .wm-row{font-size:34px}
+    }
+    @media (max-width:600px){
+      .shell{width:100%;max-width:390px;margin:0 auto;padding-left:14px;padding-right:14px}
+      .hero,.card,.step,.footer{max-width:100%}
+      .banner,.hero p,.summary,.step p{overflow-wrap:anywhere}
+    }
+    @media (max-width:480px){
+      .brand{align-items:flex-start}
+      .logo{width:38px;height:38px}
+      .actions .button,.cta-row .button{width:100%}
+      .metrics{grid-template-columns:1fr}
+      .metric{min-width:0}
+      .hero-card{min-height:0}
+      .hero-card .inner{gap:18px}
+      .step{grid-template-columns:1fr;gap:6px}
     }
   </style>
 </head>
 <body>
-  <main class="page">
-    <header class="topbar" aria-label="Page header">
-      <div class="brand">Outlaw Intelligence</div>
-      <nav class="nav" aria-label="Primary navigation">
-        <a href="#capabilities">Capabilities</a>
-        <a href="#proof">Proof</a>
-        <a href="#process">Process</a>
-        <a class="nav-cta" href="#contact">Request a private build review</a>
-      </nav>
-    </header>
+  <div class="wallpaper" aria-hidden="true">
+    <video autoplay muted loop playsinline src="matrix-quote-background-2-2-live.mp4"></video>
+    <div class="tint"></div>
+    <div class="mark">
+      <div class="wm-row">Outlaw Intelligence LLC &nbsp; Outlaw Intelligence LLC &nbsp; Outlaw Intelligence LLC &nbsp; Outlaw Intelligence LLC</div>
+      <div class="wm-row">Outlaw Intelligence LLC &nbsp; Outlaw Intelligence LLC &nbsp; Outlaw Intelligence LLC &nbsp; Outlaw Intelligence LLC</div>
+      <div class="wm-row">Outlaw Intelligence LLC &nbsp; Outlaw Intelligence LLC &nbsp; Outlaw Intelligence LLC &nbsp; Outlaw Intelligence LLC</div>
+      <div class="wm-row">Outlaw Intelligence LLC &nbsp; Outlaw Intelligence LLC &nbsp; Outlaw Intelligence LLC &nbsp; Outlaw Intelligence LLC</div>
+      <div class="wm-row">Outlaw Intelligence LLC &nbsp; Outlaw Intelligence LLC &nbsp; Outlaw Intelligence LLC &nbsp; Outlaw Intelligence LLC</div>
+    </div>
+  </div>
 
-    <section class="hero" aria-labelledby="hero-title">
-      <div class="hero-inner">
+  <div class="shell">
+    <div class="topbar">
+      <div class="brand">
+        <div class="logo">OI</div>
         <div>
-          <span class="eyebrow">Premium website development platform</span>
-          <h1 id="hero-title">Websites built like revenue infrastructure.</h1>
-          <p class="lead">Outlaw Intelligence designs and develops executive-grade web systems for service companies that need stronger trust, cleaner lead capture, and a digital presence worthy of the business behind it.</p>
-          <div class="hero-actions" aria-label="Primary actions">
-            <a class="button primary" href="mailto:dylan@outlawintelligence.com?subject=Private%20Build%20Review%20Request&amp;body=Hi%20Dylan%2C%0A%0AI%27d%20like%20to%20request%20a%20private%20build%20review%20for%20our%20website.%0A%0ACompany%3A%0AWebsite%3A%0APriority%3A%0A">Request a private build review</a>
-            <a class="button secondary" href="#capabilities">Explore capabilities</a>
+          <h1>Outlaw Intelligence<br>Premium Website Development Platform</h1>
+          <p>AI-built websites, chatbots, reputation systems, and conversion infrastructure for businesses that need a sharper digital edge.</p>
+        </div>
+      </div>
+      <div class="status">
+        <span class="pill"><span class="dot"></span>Production ready</span>
+        <span class="pill"><span class="dot"></span>AI web systems</span>
+        <span class="pill"><span class="dot"></span>Retainer builds</span>
+      </div>
+    </div>
+
+    <div class="banner">Outlaw Intelligence LLC builds premium website systems for service businesses that need stronger trust, cleaner lead capture, and AI infrastructure that works behind the scenes.</div>
+
+    <section class="hero">
+      <div class="hero-grid">
+        <div>
+          <div class="eyebrow">Premium website development platform</div>
+          <h2><span>Websites built like revenue infrastructure.</span></h2>
+          <p>Outlaw Intelligence designs and develops executive-grade web systems for service companies that need stronger trust, cleaner lead capture, and a digital presence worthy of the business behind it.</p>
+          <div class="actions">
+            <a class="button primary" href="#pricing">Request a private build</a>
+            <a class="button" href="#capabilities">Explore capabilities</a>
+            <a class="button" href="#process">See the process</a>
+          </div>
+          <div class="chips">
+            <span class="chip">First impression quality</span>
+            <span class="chip">Conversion architecture</span>
+            <span class="chip">Operational readiness</span>
           </div>
         </div>
-
-        <aside class="platform-panel" aria-label="Website platform performance dashboard">
-          <div class="interface">
-            <div class="interface-top">
-              <span>Build system</span>
-              <span class="window-dots" aria-hidden="true"><span></span><span></span><span></span></span>
-            </div>
-            <div class="interface-body">
-              <div class="dash-row">
-                <div>
-                  <strong>First impression quality</strong>
-                  <span>Premium positioning, hierarchy, and trust proof in the opening viewport.</span>
-                </div>
-                <div class="metric">A<small>+</small></div>
-              </div>
-              <div class="dash-row">
-                <div>
-                  <strong>Conversion architecture</strong>
-                  <span>Lead paths mapped around buyer intent, service urgency, and sales follow-up.</span>
-                </div>
-                <div class="metric">3.4<small>x</small></div>
-              </div>
-              <div class="dash-row">
-                <div>
-                  <strong>Operational readiness</strong>
-                  <span>Fast static delivery, accessible markup, analytics-ready structure, and SEO foundations.</span>
-                </div>
-                <div class="metric">98<small>/100</small></div>
-              </div>
-            </div>
-          </div>
-
-          <div class="hero-proof" aria-label="Platform trust signals">
-            <div>
-              <strong>Strategy</strong>
-              <span>Positioning, offer architecture, and buyer-path planning before pixels.</span>
+        <div class="hero-card panel">
+          <div class="inner">
+            <div class="badges">
+              <div class="tag active">AI build system</div>
+              <div class="tag warn">Website operating system</div>
             </div>
             <div>
-              <strong>Build</strong>
-              <span>Lean, responsive, high-performance websites without bloated dependencies.</span>
+              <h3>Revenue infrastructure, not brochureware.</h3>
+              <div class="sub">A premium web platform built to turn attention into trust, questions into conversations, and satisfied customers into visible proof.</div>
             </div>
-            <div>
-              <strong>Growth</strong>
-              <span>Measurement, iteration, and landing systems that support the pipeline.</span>
+            <div class="metrics">
+              <div class="metric"><strong>A+</strong><span>first impression quality</span></div>
+              <div class="metric"><strong>3.4x</strong><span>conversion architecture</span></div>
+              <div class="metric"><strong>98/100</strong><span>operational readiness</span></div>
+              <div class="metric"><strong>AI</strong><span>automation layer</span></div>
             </div>
           </div>
-        </aside>
-      </div>
-    </section>
-
-    <section class="section" id="capabilities" aria-labelledby="capabilities-title">
-      <div class="section-grid">
-        <div>
-          <p class="section-kicker">Capabilities</p>
-          <h2 id="capabilities-title">A full-stack web partner for businesses past the template stage.</h2>
-        </div>
-        <div>
-          <p class="section-copy">The work is structured around the parts of a website that actually compound: positioning, visual authority, conversion flow, technical performance, and the systems that turn interest into qualified conversations.</p>
-          <div class="capability-grid" aria-label="Website development capabilities">
-            <article class="capability">
-              <span class="icon" aria-hidden="true">01</span>
-              <h3>Executive web strategy</h3>
-              <p>Sharper market positioning, page architecture, service packaging, and CTA hierarchy built around the sales conversation you want to create.</p>
-            </article>
-            <article class="capability">
-              <span class="icon" aria-hidden="true">02</span>
-              <h3>Premium interface design</h3>
-              <p>Modern visual systems with refined typography, confident spacing, and trust-building content patterns that feel expensive on first glance.</p>
-            </article>
-            <article class="capability">
-              <span class="icon" aria-hidden="true">03</span>
-              <h3>High-performance development</h3>
-              <p>Fast static pages, responsive layouts, accessibility-minded markup, clean metadata, and build choices that avoid unnecessary platform drag.</p>
-            </article>
-            <article class="capability">
-              <span class="icon" aria-hidden="true">04</span>
-              <h3>Conversion systems</h3>
-              <p>Lead forms, landing pages, proof sections, analytics events, and follow-up paths designed to move visitors from interest to action.</p>
-            </article>
-          </div>
         </div>
       </div>
     </section>
 
-    <section class="section light-band" id="proof" aria-labelledby="proof-title">
-      <div class="section-grid">
+    <section id="capabilities">
+      <div class="section-head">
         <div>
-          <p class="section-kicker">Proof signals</p>
-          <h2 id="proof-title">Built around the signals serious buyers look for.</h2>
+          <h3>Capabilities</h3>
+          <p>A full-stack web partner for businesses past the template stage.</p>
         </div>
-        <div>
-          <p class="section-copy">High-end sites have to do more than look polished. They need to quickly answer whether the business is credible, whether the offer is relevant, and whether taking the next step feels worth the visitor's time.</p>
-          <div class="proof-grid" aria-label="Website proof priorities">
-            <article class="proof-card">
-              <span class="proof-value">0.8<small>s</small></span>
-              <h3>Immediate premium read</h3>
-              <p>The first screen is composed to signal quality before the visitor starts evaluating details.</p>
-            </article>
-            <article class="proof-card">
-              <span class="proof-value">5</span>
-              <h3>Trust layers per page</h3>
-              <p>Reviews, process clarity, outcomes, credentials, guarantees, and strong service specificity are placed near decision points.</p>
-            </article>
-            <article class="proof-card">
-              <span class="proof-value">24<small>/7</small></span>
-              <h3>Lead capture readiness</h3>
-              <p>Clear forms and contact routes make it easy to start a qualified conversation outside business hours.</p>
-            </article>
-          </div>
-        </div>
+      </div>
+      <div class="grid g4">
+        <article class="card"><h4>Executive web strategy</h4><p class="summary">Sharper market positioning, page architecture, service packaging, and CTA hierarchy built around the sales conversation you want to create.</p></article>
+        <article class="card"><h4>Premium interface design</h4><p class="summary">Modern visual systems with refined typography, confident spacing, and trust-building content patterns that feel expensive on first glance.</p></article>
+        <article class="card"><h4>High-performance development</h4><p class="summary">Fast static pages, responsive layouts, accessibility-minded markup, clean metadata, and build choices that avoid unnecessary platform drag.</p></article>
+        <article class="card"><h4>Conversion systems</h4><p class="summary">Lead forms, landing pages, proof sections, analytics events, and follow-up paths designed to move visitors from interest to action.</p></article>
       </div>
     </section>
 
-    <section class="section" aria-labelledby="platform-title">
-      <div class="section-grid">
+    <section id="proof">
+      <div class="section-head">
         <div>
-          <p class="section-kicker">Platform story</p>
-          <h2 id="platform-title">Not a brochure. A business asset with a clean operating model.</h2>
+          <h3>Proof signals</h3>
+          <p>Built around the signals serious buyers look for.</p>
         </div>
-        <div>
-          <p class="section-copy">Outlaw Intelligence builds the public-facing system your sales motion can rely on: core site, campaign pages, proof library, technical foundation, and the content structure needed for search and paid traffic.</p>
-          <div class="stack" aria-label="Website platform layers">
-            <article class="stack-item">
-              <div><span class="tag">Identity</span></div>
-              <div>
-                <h3>Brand presence that looks aligned with the price point.</h3>
-                <p>Messaging, typography, color, layout, and page rhythm are treated as credibility signals, not decoration.</p>
-              </div>
-            </article>
-            <article class="stack-item">
-              <div><span class="tag">Demand</span></div>
-              <div>
-                <h3>Pages built around intent, urgency, and buyer questions.</h3>
-                <p>Service pages, landing pages, and lead paths are structured so every section has a commercial job.</p>
-              </div>
-            </article>
-            <article class="stack-item">
-              <div><span class="tag">System</span></div>
-              <div>
-                <h3>A durable foundation for iteration.</h3>
-                <p>Clean static implementation, analytics-ready markup, responsive behavior, and room to add proof, offers, and campaigns without rebuilding from scratch.</p>
-              </div>
-            </article>
-          </div>
-        </div>
+      </div>
+      <div class="grid g3">
+        <article class="card"><h4>Immediate premium read</h4><p class="summary">The first screen is composed to signal quality before the visitor starts evaluating details.</p></article>
+        <article class="card"><h4>Trust layers per page</h4><p class="summary">Reviews, process clarity, outcomes, credentials, guarantees, and strong service specificity are placed near decision points.</p></article>
+        <article class="card"><h4>Lead capture readiness</h4><p class="summary">Clear forms and contact routes make it easy to start a qualified conversation outside business hours.</p></article>
       </div>
     </section>
 
-    <section class="section" id="process" aria-labelledby="process-title">
-      <div class="section-grid">
+    <section id="platform-story">
+      <div class="section-head">
         <div>
-          <p class="section-kicker">Process</p>
-          <h2 id="process-title">A focused path from review to launch.</h2>
+          <h3>Platform story</h3>
+          <p>Not a brochure. A business asset with a clean operating model.</p>
         </div>
-        <div>
-          <p class="section-copy">The engagement stays senior and direct. We diagnose the commercial problem, design the system, build the page set, and leave the business with a site that can keep improving after launch.</p>
-          <div class="process-list" aria-label="Website development process">
-            <article class="process">
-              <div class="step">01</div>
-              <div>
-                <h3>Private build review</h3>
-                <p>We evaluate positioning, visual authority, mobile conversion, search foundations, and the lead path that currently exists.</p>
-              </div>
-            </article>
-            <article class="process">
-              <div class="step">02</div>
-              <div>
-                <h3>Blueprint and scope</h3>
-                <p>The build is mapped around a tight set of pages, content proof, conversion goals, and launch requirements.</p>
-              </div>
-            </article>
-            <article class="process">
-              <div class="step">03</div>
-              <div>
-                <h3>Design and development</h3>
-                <p>The site is built as a fast, responsive, accessible web experience with premium visual direction and clean technical execution.</p>
-              </div>
-            </article>
-            <article class="process">
-              <div class="step">04</div>
-              <div>
-                <h3>Launch and iteration</h3>
-                <p>After launch, the platform can support landing pages, new service lines, measurement improvements, and ongoing conversion refinement.</p>
-              </div>
-            </article>
-          </div>
-        </div>
+      </div>
+      <div class="grid g3">
+        <article class="card"><h4>Brand presence that looks aligned with the price point.</h4><p class="summary">Messaging, typography, color, layout, and page rhythm are treated as credibility signals, not decoration.</p></article>
+        <article class="card"><h4>Pages built around intent, urgency, and buyer questions.</h4><p class="summary">Service pages, landing pages, and lead paths are structured so every section has a commercial job.</p></article>
+        <article class="card"><h4>A durable foundation for iteration.</h4><p class="summary">Clean static implementation, analytics-ready markup, responsive behavior, and room to add proof, offers, and campaigns without rebuilding from scratch.</p></article>
       </div>
     </section>
 
-    <section class="section" id="contact" aria-labelledby="contact-title">
-      <div class="cta">
+    <section id="pricing">
+      <div class="section-head">
         <div>
-          <p class="section-kicker">Private build review</p>
-          <h2 id="contact-title">Bring the site up to the standard of the company.</h2>
-          <p class="section-copy">For businesses with real expertise, strong economics, and a website that no longer reflects either. Request a private review and we will identify the highest-leverage path to a premium web presence.</p>
-          <div class="section-actions">
-            <a class="button primary" href="mailto:dylan@outlawintelligence.com?subject=Private%20Build%20Review%20Request&amp;body=Hi%20Dylan%2C%0A%0AI%27d%20like%20to%20request%20a%20private%20build%20review%20for%20our%20website.%0A%0ACompany%3A%0AWebsite%3A%0APriority%3A%0A">Email Outlaw Intelligence</a>
-            <a class="button secondary" href="#process">See the process</a>
-          </div>
+          <h3>Pricing</h3>
+          <p>Three clear retainer paths for businesses that want a better website, stronger lead capture, and an AI layer that compounds over time.</p>
         </div>
-        <aside class="cta-panel" aria-label="Engagement priorities">
-          <div class="cta-panel-header">
-            <strong>Typical first engagement</strong>
-            <span>Premium redesign and conversion rebuild for an established service business.</span>
-          </div>
-          <ul class="cta-list">
-            <li>Messaging and page architecture for the core offer</li>
-            <li>Homepage, service pages, proof sections, and conversion paths</li>
-            <li>Responsive static implementation with accessible, fast-loading markup</li>
-            <li>Metadata, structured content, analytics hooks, and launch cleanup</li>
-            <li>Post-launch recommendations for search, campaigns, and proof expansion</li>
+      </div>
+      <div class="grid g3">
+        <article class="card price-card">
+          <span class="price-label">Foundation</span>
+          <div class="price"><strong>$1,000</strong><span>/ month</span></div>
+          <h4>Website Care</h4>
+          <p class="summary">For local businesses that need a professional website and someone responsible for keeping it clean, current, and working.</p>
+          <ul class="feature-list">
+            <li>New mobile-first website build or rebuild</li>
+            <li>Basic content updates and page edits</li>
+            <li>Bug fixes, layout cleanup, and broken-link fixes</li>
+            <li>Contact forms and clear call/quote buttons</li>
+            <li>Basic local SEO structure and trust signals</li>
           </ul>
-        </aside>
+          <p class="price-note">Best fit: businesses that need a stronger digital storefront without hiring a full-time web person.</p>
+          <div class="cta-row"><a class="button small" href="#contact">Request Website Care</a></div>
+        </article>
+        <article class="card price-card featured">
+          <span class="price-label">Conversion</span>
+          <div class="price"><strong>$1,500</strong><span>/ month</span></div>
+          <h4>Website + Chatbot</h4>
+          <p class="summary">Everything in Website Care, plus a custom chatbot built around the client's services, FAQs, lead flow, and customer questions.</p>
+          <ul class="feature-list">
+            <li>Custom website chatbot deployment</li>
+            <li>Service-specific answers and lead qualification</li>
+            <li>Customer question capture for follow-up</li>
+            <li>Website traffic and visitor behavior info</li>
+            <li>Monthly improvement recommendations</li>
+          </ul>
+          <p class="price-note">Best fit: service businesses that want the website answering questions and collecting better leads while they work.</p>
+          <div class="cta-row"><a class="button small primary" href="#contact">Start Website + Chatbot</a></div>
+        </article>
+        <article class="card price-card">
+          <span class="price-label">Growth</span>
+          <div class="price"><strong>$2,000</strong><span>/ month</span></div>
+          <h4>Website + Reputation Agent</h4>
+          <p class="summary">Everything in Conversion, plus a post-service follow-up agent that protects reputation and turns happy customers into reviews.</p>
+          <ul class="feature-list">
+            <li>Automated post-service customer follow-up</li>
+            <li>Positive/negative sentiment routing</li>
+            <li>Negative replies routed directly to owner email</li>
+            <li>Positive replies asked for a Google review</li>
+            <li>Reputation growth system to boost visibility and lead generation</li>
+          </ul>
+          <p class="price-note">Best fit: businesses that already do good work and need a reliable system to capture more public proof.</p>
+          <div class="cta-row"><a class="button small" href="#contact">Discuss Reputation Agent</a></div>
+        </article>
       </div>
     </section>
 
-    <footer class="site-footer" aria-label="Site footer">
-      <div class="footer-brand">
+    <section id="process">
+      <div class="section-head">
+        <div>
+          <h3>Process</h3>
+          <p>A focused path from build to launch.</p>
+        </div>
+      </div>
+      <div class="timeline">
+        <div class="step"><div class="num">01</div><div><h5>Private build request</h5><p>We evaluate positioning, visual authority, mobile conversion, search foundations, and the lead path your business needs.</p></div></div>
+        <div class="step"><div class="num">02</div><div><h5>Blueprint and scope</h5><p>The build is mapped around a tight set of pages, content proof, conversion goals, and launch requirements.</p></div></div>
+        <div class="step"><div class="num">03</div><div><h5>Design and development</h5><p>The site is built as a fast, responsive, accessible web experience with premium visual direction and clean technical execution.</p></div></div>
+        <div class="step"><div class="num">04</div><div><h5>Launch and iteration</h5><p>After launch, the platform can support landing pages, new service lines, measurement improvements, and ongoing conversion refinement.</p></div></div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="section-head">
+        <div>
+          <h3>Private build request</h3>
+          <p>Bring the site up to the standard of the company.</p>
+        </div>
+      </div>
+      <div class="grid g2">
+        <article class="card">
+          <h4>Build the system your business should already have</h4>
+          <p class="summary">A premium website foundation, clear conversion path, and practical AI automation layer built to support real business growth.</p>
+          <div class="cta-row">
+            <a class="button primary" href="mailto:dylan@outlawintelligenceai.com">Email Outlaw Intelligence</a>
+            <a class="button" href="#pricing">See pricing</a>
+          </div>
+        </article>
+        <article class="card">
+          <h4>Ready when you are</h4>
+          <p class="summary">Start with a private build request. We will define the scope, clarify the offer, and turn the site into a system that looks premium and works commercially.</p>
+          <div class="cta-row">
+            <a class="button" href="https://outlawintelligenceai.com/">Visit Outlaw Intelligence</a>
+            <a class="button" href="#capabilities">Explore capabilities</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <footer class="footer" aria-label="Site footer">
+      <div>
         <strong>Outlaw Intelligence</strong>
         <span>Premium website strategy, design, and development for established service businesses.</span>
       </div>
@@ -1278,146 +413,14 @@
         <a href="privacy.html">Privacy Policy</a>
         <a href="terms.html">Terms</a>
         <a href="refunds.html">Refunds / Contact</a>
-        <a href="mailto:dylan@outlawintelligence.com?subject=Outlaw%20Intelligence%20Inquiry">dylan@outlawintelligence.com</a>
+        <a href="mailto:dylan@outlawintelligenceai.com?subject=Outlaw%20Intelligence%20Inquiry">dylan@outlawintelligenceai.com</a>
+        <a href="https://outlawintelligenceai.com/">outlawintelligenceai.com</a>
       </nav>
       <div class="footer-meta">
         <span>Outlaw Intelligence LLC</span>
         <span>Premium website development platform</span>
       </div>
     </footer>
-  </main>
-
-  <aside class="chat-widget" aria-label="Outlaw Intelligence chat assistant">
-    <div class="chat-panel" id="chat-panel" aria-live="polite">
-      <div class="chat-header">
-        <div>
-          <strong>Outlaw Intelligence Assistant</strong>
-          <span>Ask about services, process, deliverables, timeline, pricing style, or contact.</span>
-        </div>
-        <button class="chat-close" type="button" aria-label="Close chat">x</button>
-      </div>
-      <div class="chat-messages" id="chat-messages">
-        <div class="chat-message bot">I can answer focused questions about Outlaw Intelligence. For anything outside the company, I will route you to email.</div>
-      </div>
-      <div class="chat-quick" aria-label="Suggested questions">
-        <button type="button" data-question="What services does Outlaw Intelligence offer?">Services</button>
-        <button type="button" data-question="What is the process?">Process</button>
-        <button type="button" data-question="What deliverables are included?">Deliverables</button>
-        <button type="button" data-question="How do pricing and engagements work?">Pricing style</button>
-      </div>
-      <form class="chat-form" id="chat-form">
-        <input id="chat-input" type="text" autocomplete="off" placeholder="Ask about Outlaw Intelligence..." aria-label="Chat question">
-        <button type="submit">Send</button>
-      </form>
-    </div>
-    <button class="chat-toggle" type="button" aria-expanded="false" aria-controls="chat-panel">
-      <span>
-        <strong>Ask Outlaw</strong>
-        <small>Services, process, pricing, contact</small>
-      </span>
-      <span class="chat-toggle-icon" aria-hidden="true">?</span>
-    </button>
-  </aside>
-
-  <script>
-    const chatWidget = document.querySelector('.chat-widget');
-    const chatToggle = document.querySelector('.chat-toggle');
-    const chatClose = document.querySelector('.chat-close');
-    const chatForm = document.querySelector('#chat-form');
-    const chatInput = document.querySelector('#chat-input');
-    const chatMessages = document.querySelector('#chat-messages');
-    const quickButtons = document.querySelectorAll('[data-question]');
-    const contactEmail = 'dylan@outlawintelligence.com';
-    const mailto = 'mailto:' + contactEmail + '?subject=Outlaw%20Intelligence%20Inquiry';
-
-    const responses = [
-      {
-        keywords: ['service', 'offer', 'capability', 'website', 'design', 'development', 'conversion', 'seo', 'landing'],
-        answer: 'Outlaw Intelligence provides premium website strategy, interface design, fast static development, conversion architecture, landing pages, metadata/structured content cleanup, analytics-ready implementation, and launch refinement for established service businesses.'
-      },
-      {
-        keywords: ['process', 'step', 'work', 'start', 'review', 'blueprint', 'scope'],
-        answer: 'The process starts with a private build review, then a blueprint and scope, followed by design and development, launch cleanup, and iteration recommendations for search, campaigns, and proof expansion.'
-      },
-      {
-        keywords: ['deliverable', 'include', 'included', 'receive', 'get', 'handoff'],
-        answer: 'Typical deliverables include messaging and page architecture, homepage and service page builds, proof and conversion sections, responsive accessible markup, metadata, analytics hooks, and post-launch recommendations.'
-      },
-      {
-        keywords: ['timeline', 'time', 'long', 'launch', 'schedule', 'deadline', 'duration'],
-        answer: 'Timeline depends on scope and content readiness. A focused premium rebuild is scoped after the private review so the schedule reflects the actual page set, approvals, and launch requirements.'
-      },
-      {
-        keywords: ['price', 'pricing', 'cost', 'budget', 'retainer', 'engagement', 'payment', 'fee'],
-        answer: 'Engagements are scoped around the business problem and the page system required. Outlaw Intelligence usually begins with a private build review, then proposes the right fixed project or ongoing iteration path.'
-      },
-      {
-        keywords: ['contact', 'email', 'talk', 'call', 'book', 'hire', 'reach', 'refund', 'billing'],
-        answer: 'The direct contact route is <a href="' + mailto + '">' + contactEmail + '</a>. Include your company, current website, and the highest-priority improvement you want from the site.'
-      }
-    ];
-
-    function addMessage(text, sender) {
-      const message = document.createElement('div');
-      message.className = 'chat-message ' + sender;
-      if (sender === 'bot') {
-        message.innerHTML = text;
-      } else {
-        message.textContent = text;
-      }
-      chatMessages.appendChild(message);
-      chatMessages.scrollTop = chatMessages.scrollHeight;
-    }
-
-    function getReply(question) {
-      const normalized = question.toLowerCase();
-      const match = responses.find((item) => item.keywords.some((keyword) => normalized.includes(keyword)));
-
-      if (match) {
-        return match.answer;
-      }
-
-      return 'I can help with Outlaw Intelligence questions about services, process, deliverables, timeline, pricing style, and contact. For anything else, please email <a href="' + mailto + '">' + contactEmail + '</a>.';
-    }
-
-    function askQuestion(question) {
-      const cleanQuestion = question.trim();
-      if (!cleanQuestion) return;
-      addMessage(cleanQuestion, 'user');
-      addMessage(getReply(cleanQuestion), 'bot');
-    }
-
-    if (chatWidget && chatToggle) {
-      chatToggle.addEventListener('click', () => {
-        const isOpen = chatWidget.classList.toggle('open');
-        chatToggle.setAttribute('aria-expanded', String(isOpen));
-        if (isOpen && chatInput) {
-          chatInput.focus();
-        }
-      });
-    }
-
-    if (chatClose && chatWidget && chatToggle) {
-      chatClose.addEventListener('click', () => {
-        chatWidget.classList.remove('open');
-        chatToggle.setAttribute('aria-expanded', 'false');
-        chatToggle.focus();
-      });
-    }
-
-    if (chatForm && chatInput) {
-      chatForm.addEventListener('submit', (event) => {
-        event.preventDefault();
-        askQuestion(chatInput.value);
-        chatInput.value = '';
-      });
-    }
-
-    quickButtons.forEach((button) => {
-      button.addEventListener('click', () => {
-        askQuestion(button.dataset.question || '');
-      });
-    });
-  </script>
+  </div>
 </body>
 </html>
