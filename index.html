@@ -183,14 +183,24 @@
       .banner,.hero p,.summary,.step p{overflow-wrap:anywhere}
     }
     @media (max-width:480px){
-      .brand{align-items:flex-start}
+      .brand{align-items:flex-start;gap:10px;max-width:100%}
+      .brand h1{font-size:13px;line-height:1.16;max-width:18ch}
+      .brand p{font-size:12px;line-height:1.46;max-width:34ch}
       .logo{width:38px;height:38px}
+      .hero{padding:18px}
+      .hero h2{font-size:clamp(28px,7.2vw,33px)}
+      .hero p{font-size:15px;line-height:1.58}
       .actions .button,.cta-row .button{width:100%}
       .metrics{grid-template-columns:1fr}
       .metric{min-width:0}
+      .metric strong{font-size:24px}
       .hero-card{min-height:0}
       .hero-card .inner{gap:18px}
+      .hero-card h3{font-size:clamp(24px,6.4vw,28px);max-width:11ch}
+      .hero-card .sub{font-size:15px;line-height:1.58}
       .step{grid-template-columns:1fr;gap:6px}
+      .step h5{font-size:16px}
+      .step p{font-size:14px}
     }
   </style>
 </head>
